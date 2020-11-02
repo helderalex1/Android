@@ -13,18 +13,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void facebookOnClick(View view) {
-        goToUrl("https://www.facebook.com/");
+        try {
+            goToUrl("facebook://feed");
+        }catch(Exception e){
+            goToUrl("https://www.facebook.com/");
+        }
     }
 
     public void instagramOnClick(View view) {
-        goToUrl("https://www.instagram.com/");
+        try {
+            goToUrl("instagram://feed")   ;
+        }catch(Exception e){
+            goToUrl("https://www.instagram.com/");
+        }
+
     }
 
     public void linkedinOnClick(View view) {
-        goToUrl("https://www.linkedin.com/");
+        try {
+            goToUrl("linkedin://feed")   ;
+        }catch(Exception e){
+            goToUrl("https://www.linkedin.com/");
+        }
+
     }
 
     private void goToUrl (String url) {

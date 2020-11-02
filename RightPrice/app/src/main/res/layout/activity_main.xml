@@ -23,46 +23,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.176" />
 
-    <ImageButton
+    <Button
         android:id="@+id/facebookImgBtn"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:background="@null"
+        android:background="@mipmap/facebook_icon"
+        android:onClick="facebookOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.350"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.980"
-        app:srcCompat="@mipmap/facebook_icon"
-        android:onClick="facebookOnClick"/>
+        />
 
-    <ImageButton
+    <Button
         android:id="@+id/instagramImgBtn"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:background="@null"
+        android:background="@mipmap/instagram_icon"
+        android:onClick="instagramOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980"
-        app:srcCompat="@mipmap/instagram_icon"
-        android:onClick="instagramOnClick"/>
+        app:layout_constraintVertical_bias="0.980" />
 
-    <ImageButton
+    <Button
         android:id="@+id/linkedinImgBtn"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:background="@null"
+        android:background="@mipmap/linkedin_icon"
+        android:onClick="linkedinOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.650"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980"
-        app:srcCompat="@mipmap/linkedin_icon"
-        android:onClick="linkedinOnClick"/>
+        app:layout_constraintVertical_bias="0.980" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
