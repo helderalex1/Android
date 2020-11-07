@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Minha Área">
+        <menu>
+            <item
+                android:id="@+id/nav_fornecedor_estatistica"
+                android:title="Estatistica" />
+            <item
+                android:id="@+id/nav_fornecedor_produto"
+                android:title="Os seus produtos" />
+        </menu>
+    </item>
+    <item android:title="Área de Instalador">
+        <menu>
+            <item android:id="@+id/nav_fornecedor_instalador"
+                android:title="Meus Instaladores"></item>
+        </menu>
+
+    </item>
+    <item android:title="Perfil">
+        <menu>
+            <item android:id="@+id/nav_fornecedor_conta" android:title="Conta"/>
+            <item android:id="@+id/nav_fornecedor_sair" android:title="Sair"/>
+        </menu>
+    </item>
+</menu>
