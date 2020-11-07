@@ -19,10 +19,11 @@
         app:titleTextColor="@color/black"/>
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btn_Login_Registo"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@null"
+        android:contentDescription="@string/login"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.952"
