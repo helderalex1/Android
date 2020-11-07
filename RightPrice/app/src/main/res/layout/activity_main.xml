@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <include
-        android:id="@+id/instagramImgBtn"
+        android:id="@+id/id_app_nav_bar"
         layout="@layout/app_bar_main"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
