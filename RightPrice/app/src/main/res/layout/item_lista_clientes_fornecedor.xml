@@ -26,7 +26,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvNome"
+                    android:id="@+id/tvNomed"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Nome:" />
@@ -46,7 +46,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVEmpresa"
+                    android:id="@+id/tVEmpresad"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Empresa:" />
@@ -66,7 +66,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVEmail"
+                    android:id="@+id/tVEmaild"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
@@ -87,7 +87,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVCategoria"
+                    android:id="@+id/tVCategoriad"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
