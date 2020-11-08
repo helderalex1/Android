@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Fornecedor;
+package amsi.dei.estg.ipleiria.RightPrice.Instalador;
 
 import android.os.Bundle;
 
@@ -10,12 +10,13 @@ import android.view.ViewGroup;
 
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class Aceitar_Cliente_Fragment extends Fragment {
+
+public class Adicionar_Imagem_Obra_Instalador extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_aceitar_cliente_, container, false);
+        return inflater.inflate(R.layout.fragment_adicionar_imagem_obra_instalador, container, false);
     }
 }
