@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Instalador.orcamento_obra_instalador">
+    tools:context=".Instalador.Orcamento_Obra_Instalador">
 
     <ListView
         android:id="@+id/lVorcamento_obra"

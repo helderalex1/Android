@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class Clientes_instalador extends Fragment {
+public class Orcamento_Obra_Instalador extends Fragment {
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_clientes_instalador, container, false);
+        return inflater.inflate(R.layout.fragment_orcamento_obra_instalador, container, false);
     }
 }
