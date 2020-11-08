@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".Instalador.Editar_orcamento_instalador">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="386dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/det_capa"
+                    android:layout_width="362dp"
+                    android:layout_height="159dp" />
+
+                <EditText
+                    android:id="@+id/nome_obra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:hint="Nome da obra"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/nome_cliente_obra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="Nome do cliente"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/data_obra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="Data"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/margem_obra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Margem"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/total_obra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Total"
+                    android:inputType="textPersonName" />
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_produtos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="80dp"
+        android:backgroundTint="#E91E63"
+        android:clickable="true"
+        android:src="@drawable/ic_floating_adicionar" />
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fab_detalhes"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="10dp"
+    android:backgroundTint="#E91E63"
+    android:clickable="true"
+    android:src="@drawable/ic_guardar" />
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
