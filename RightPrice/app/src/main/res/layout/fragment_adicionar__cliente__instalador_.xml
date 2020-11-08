@@ -31,11 +31,11 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/empresa"
+                android:id="@+id/telefone_instalador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Introduza o nome da empresa"
+                android:hint="Introduza o telefone"
                 android:inputType="textPersonName" />
             <EditText
                 android:id="@+id/email"
@@ -45,11 +45,11 @@
                 android:hint="Introduza o email"
                 android:inputType="textPersonName" />
             <EditText
-                android:id="@+id/categoria"
+                android:id="@+id/Nif_instalador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Introduza a categoria"
+                android:hint="Introduza o nif do cliente"
                 android:inputType="textPersonName" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
