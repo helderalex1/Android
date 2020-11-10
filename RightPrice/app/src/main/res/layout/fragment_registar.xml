@@ -179,11 +179,12 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnCancelar"
+                android:id="@+id/btnCancelarRegisto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/main_color"
-                android:text="@string/fechar" />
+                android:text="@string/fechar"
+                android:onClick="Fechar_popup"/>
 
             <Space
                 android:layout_width="10dp"

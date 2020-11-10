@@ -30,7 +30,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:srcCompat="@mipmap/login_register" />
+        app:srcCompat="@mipmap/login_register"
+        />
     <FrameLayout
         android:id="@+id/framelayout1"
         android:layout_width="match_parent"

@@ -18,4 +18,6 @@
     <string name="password">Password:</string>
     <string name="fechar">Fechar</string>
     <string name="nova_password">Nova Password:</string>
+    <string name="Login">Login</string>
+    <string name="Registar">Registar</string>
 </resources>
