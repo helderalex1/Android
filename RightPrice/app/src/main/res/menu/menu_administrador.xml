@@ -21,7 +21,7 @@
     <item android:title="Perfil">
         <menu>
             <item android:id="@+id/nav_administrador_conta" android:title="Conta"/>
-            <item android:id="@+id/nav_admnistrador_sair" android:title="Sair"/>
+            <item android:id="@+id/nav_administrador_sair" android:title="Sair"/>
         </menu>
     </item>
 </menu>
