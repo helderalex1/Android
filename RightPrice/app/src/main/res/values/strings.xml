@@ -20,4 +20,6 @@
     <string name="nova_password">Nova Password:</string>
     <string name="Login">Login</string>
     <string name="Registar">Registar</string>
+    <string name="ndOpen">Abrir</string>
+    <string name="ndClose">Fechar</string>
 </resources>
