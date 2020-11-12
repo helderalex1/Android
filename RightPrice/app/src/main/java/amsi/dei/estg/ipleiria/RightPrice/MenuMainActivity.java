@@ -1,7 +1,9 @@
 package amsi.dei.estg.ipleiria.RightPrice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +34,8 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
     private NavigationView navigationView;
     private DrawerLayout drawerInstalador, drawerFornecedor, drawerAdministrador;
     private FragmentManager fragmentManager;
-    public static final String numConta = "numConta";
+    public static final String numConta ="";
+    private int numeconta=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +50,16 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
         drawerFornecedor = findViewById(R.id.drawer_layout_fornecedor);
         drawerAdministrador = findViewById(R.id.drawer_layout_administrador);
 
-        if(numConta == "1") {
+        numeconta= Integer.parseInt(getIntent().getStringExtra(numConta));
+        if(numeconta==1) {
             toggle = new ActionBarDrawerToggle(this, drawerInstalador, toolbar, R.string.ndOpen, R.string.ndClose);
             toggle.syncState();
             drawerInstalador.addDrawerListener(toggle);
-        }else if(numConta == "2") {
+        }else if(numeconta==2) {
             toggle = new ActionBarDrawerToggle(this, drawerFornecedor, toolbar, R.string.ndOpen, R.string.ndClose);
             toggle.syncState();
             drawerFornecedor.addDrawerListener(toggle);
-        }else if(numConta == "3") {
+        }else if(numeconta==3) {
             toggle = new ActionBarDrawerToggle(this, drawerAdministrador, toolbar, R.string.ndOpen, R.string.ndClose);
             toggle.syncState();
             drawerFornecedor.addDrawerListener(toggle);
@@ -140,13 +144,13 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 break;*/
         }
         if(fragment != null){
-            fragmentManager.beginTransaction().replace(R.id.framelayout1,fragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.framelayout2,fragment).commit();
         }
-        if(numConta=="1") {
+        if(numeconta==1) {
             drawerInstalador.closeDrawer(GravityCompat.START);
-        }else if(numConta=="2") {
+        }else if(numeconta==2) {
             drawerFornecedor.closeDrawer(GravityCompat.START);
-        }else if(numConta=="3") {
+        }else if(numeconta==3) {
             drawerAdministrador.closeDrawer(GravityCompat.START);
         }
         return true;
