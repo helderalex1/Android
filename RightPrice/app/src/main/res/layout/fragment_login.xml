@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:text="@string/fechar"
             android:backgroundTint="@color/main_color"
-            android:onClick="Fechar_popup_registo"/>
+            android:onClick="Fechar_popup"/>
 
         <Space
             android:layout_width="10dp"
@@ -88,7 +88,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login"
-            android:backgroundTint="@color/main_color" />
+            android:backgroundTint="@color/main_color"
+            android:onClick="onclick_login"/>
     </LinearLayout>
 
 </LinearLayout>
