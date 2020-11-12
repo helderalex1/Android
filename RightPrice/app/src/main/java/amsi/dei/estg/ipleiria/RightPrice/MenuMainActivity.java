@@ -32,7 +32,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
     private NavigationView navigationView;
     private DrawerLayout drawerInstalador, drawerFornecedor, drawerAdministrador;
     private FragmentManager fragmentManager;
-    private static final String numConta = "numConta";
+    public static final String numConta = "numConta";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

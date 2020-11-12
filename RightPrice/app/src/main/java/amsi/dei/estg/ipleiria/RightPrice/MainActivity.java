@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,7 +14,7 @@ import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.TabLoginRegistar;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton buton_login_registar;
-    Button btn_fechar_login, btn_fechar_registo;
+
     private TabLoginRegistar tabLoginRegistar = new TabLoginRegistar();
 
 
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buton_login_registar = findViewById(R.id.btn_Login_Registo);
-        btn_fechar_login = findViewById(R.id.btnCancelarLogin);
 
 
         buton_login_registar.setOnClickListener(new View.OnClickListener() {
@@ -79,5 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void Fechar_popup_registo(View view) {
         tabLoginRegistar.dismiss();
+    }
+
+
+    public void onclick_login(View view) {
+       tabLoginRegistar.dismiss();
+        Intent intent = new Intent( this, MenuMainActivity.class);
+        intent.putExtra(MenuMainActivity.numConta,"1");
+        startActivity(intent);
     }
 }
