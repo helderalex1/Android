@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Instalador.vistas.ClienteItem">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,8 +11,8 @@
 
         <ImageView
             android:id="@+id/imageViewclientes_instalador"
-            android:layout_width="100dp"
-            android:layout_height="136dp"
+            android:layout_width="83dp"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_user" />
 
         <LinearLayout
@@ -31,7 +32,7 @@
                     android:text="Nome:" />
 
                 <TextView
-                    android:id="@+id/tVNome_cliente_instalador"
+                    android:id="@+id/tVClienteInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -48,10 +49,10 @@
                     android:id="@+id/tVEmpresad"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Empresa:" />
+                    android:text="Telemovel:" />
 
                 <TextView
-                    android:id="@+id/tVEmpresa_cliente_instalador"
+                    android:id="@+id/tVTelClienteInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -69,10 +70,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
-                    android:text="Email:" />
+                    android:text="Nif:" />
 
                 <TextView
-                    android:id="@+id/tvEmail_cliente_instalador"
+                    android:id="@+id/tVNifClienteInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
@@ -90,10 +91,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
-                    android:text="Categoria:" />
+                    android:text="Email:" />
 
                 <TextView
-                    android:id="@+id/tvCategoria_cliente_instalador"
+                    android:id="@+id/tVEmailClienteInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"

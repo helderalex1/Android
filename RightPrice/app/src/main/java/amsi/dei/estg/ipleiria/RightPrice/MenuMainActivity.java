@@ -62,7 +62,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
         }else if(numeconta==3) {
             toggle = new ActionBarDrawerToggle(this, drawerAdministrador, toolbar, R.string.ndOpen, R.string.ndClose);
             toggle.syncState();
-            drawerFornecedor.addDrawerListener(toggle);
+            drawerAdministrador.addDrawerListener(toggle);
         }
 
 
@@ -88,7 +88,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 break;
             case R.id.nav_instalador_adicionar_fornecedor:
                 fragment = new Adicionar_Fornecedor_Instalador();
-                setTitle("dasda");
+                setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_instalador_fornecedor:
                 fragment = new Conhecer_Fornecedor_Fragment();
@@ -102,7 +102,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 fragment = new ;
                 setTitle(menuItem.getTitle());
                 break;*/
-            case R.id.nav_fornecedor_conta:
+           /* case R.id.nav_fornecedor_conta:
                 fragment = new PerfilUtilizador();
                 setTitle(menuItem.getTitle());
                 break;
@@ -117,7 +117,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_fornecedor_produto:
                 fragment = new Produto_Fornecedor_Fragment();
                 setTitle(menuItem.getTitle());
-                break;
+                break;*/
             /*case R.id.nav_fornecedor_sair:
                 fragment = new ;
                 setTitle(menuItem.getTitle());
