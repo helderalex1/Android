@@ -77,10 +77,6 @@ public class MainActivity extends AppCompatActivity {
         tabLoginRegistar.dismiss();
     }
 
-    public void Fechar_popup_registo(View view) {
-        tabLoginRegistar.dismiss();
-    }
-
 
     public void onclick_login(View view) {
        tabLoginRegistar.dismiss();
