@@ -15,6 +15,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Cliente_admin_Fragment;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.MainActivity_admin;
+import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Vistas_Listas.Lista_Clientes_Fornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.PerfilUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Adicionar_Fornecedor_Instalador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Clientes_Instalador;
@@ -52,7 +53,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 drawer= findViewById(R.id.drawer_layout_administrador);
                 break;
         }
-
+    
         Toolbar toolbar = findViewById(R.id.toolbar_menu);
         setSupportActionBar(toolbar);
         navigationView = findViewById(R.id.nav_view);
@@ -104,12 +105,12 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_fornecedor_estatistica:
                 fragment = new MainActivity_fornecedor();
                 setTitle(menuItem.getTitle());
-                break;
+                break;*/
             case R.id.nav_fornecedor_instalador:
                 fragment = new Lista_Clientes_Fornecedor();
                 setTitle(menuItem.getTitle());
                 break;
-            case R.id.nav_fornecedor_produto:
+            /*case R.id.nav_fornecedor_produto:
                 fragment = new Produto_Fornecedor_Fragment();
                 setTitle(menuItem.getTitle());
                 break;*/

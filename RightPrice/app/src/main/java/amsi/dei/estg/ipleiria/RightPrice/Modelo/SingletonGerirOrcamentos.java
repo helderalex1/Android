@@ -6,6 +6,7 @@ public class SingletonGerirOrcamentos {
 
     private ArrayList<ClientesInstalador> clientesInstaladores;
     private ArrayList<Utilizador> utilizadores_array;
+    private ArrayList<Fornecedor_instalador> fornecedor_instaladores;
     private static SingletonGerirOrcamentos instance = null;
 
 
@@ -27,6 +28,9 @@ public class SingletonGerirOrcamentos {
         utilizadores_array=new ArrayList<Utilizador>();
         utilizadores_array.add(new Utilizador(1, "Manuel", "Continente", 919564869, "a@a.pt", 0, 1, 9));
         utilizadores_array.add(new Utilizador(2, "Rui", "Captemp", 919705797, "a@ab.pt", 0, 1, 9));
+        fornecedor_instaladores = new ArrayList<Fornecedor_instalador>();
+        fornecedor_instaladores.add(new Fornecedor_instalador(1,2));
+
     }
 
     public ArrayList<ClientesInstalador> getClientesInstaladores() {
@@ -53,6 +57,20 @@ public class SingletonGerirOrcamentos {
             }
         }
         return null;
+    }
+    public ArrayList<Utilizador> getInstaladorFornecedor(int id_fornecedor){
+        ArrayList<Utilizador> utilizadorestemp;
+        utilizadorestemp = new ArrayList<Utilizador>();
+        for (Fornecedor_instalador fornecedor_instalador:fornecedor_instaladores) {
+            if(fornecedor_instalador.getId_fornecedor() == id_fornecedor){
+                for (Utilizador utilizador : utilizadores_array) {
+                    if (utilizador.getId()==fornecedor_instalador.getId_instalador()){
+                        utilizadorestemp.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus()));
+                    }
+                }
+            }
+        }
+        return utilizadorestemp;
     }
 }
 
