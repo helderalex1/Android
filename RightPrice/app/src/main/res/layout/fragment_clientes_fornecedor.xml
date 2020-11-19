@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fornecedor.Lista_Clientes_Fornecedor">
+    tools:context=".Fornecedor.Vistas_Listas.Lista_Clientes_Fornecedor">
 
     <ListView
         android:id="@+id/lvListaClienteconhecerFornecedor"
