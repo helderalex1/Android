@@ -1,10 +1,7 @@
 package amsi.dei.estg.ipleiria.RightPrice;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +13,8 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Aceitar_Cliente_admin_Fragment;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Lista_Cliente_admin_Fragment;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Cliente_admin_Fragment;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.MainActivity_admin;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Lista_Clientes_Fornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.MainActivity_fornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Produto_Fornecedor_Fragment;
 import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.PerfilUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Adicionar_Fornecedor_Instalador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Clientes_Instalador;
@@ -125,21 +118,21 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 setTitle(menuItem.getTitle());
                 break;*/
             case R.id.nav_administrador_cliente_pendente:
-                fragment = new Aceitar_Cliente_admin_Fragment();
+                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
-            case R.id.nav_administrador_clientes:
-                fragment = new Lista_Cliente_admin_Fragment();
+            /*case R.id.nav_administrador_clientes:
+                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
                 setTitle(menuItem.getTitle());
-                break;
-            case R.id.nav_administrador_conta:
+                break;*/
+            /*case R.id.nav_administrador_conta:
                 fragment = new PerfilUtilizador();
                 setTitle(menuItem.getTitle());
-                break;
-            case R.id.nav_administrador_estatistica:
+                break;*/
+           /* case R.id.nav_administrador_estatistica:
                 fragment = new MainActivity_admin();
                 setTitle(menuItem.getTitle());
-                break;
+                break;*/
             /*case R.id.nav_administrador_sair:
                 fragment = new ;
                 setTitle(menuItem.getTitle());

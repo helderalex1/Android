@@ -26,7 +26,7 @@ public class ClienteItem extends Fragment {
                              Bundle savedInstanceState)  {
         View view = inflater.inflate(R.layout.item_list_clientes_instalador, container, false);
 
-        nome = view.findViewById(R.id.tVClienteInstalador);
+        nome = view.findViewById(R.id.tVNomeClienteInstalador);
         telemovel = view.findViewById(R.id.tVTelClienteInstalador);
         nif = view.findViewById(R.id.tVNifClienteInstalador);
         email = view.findViewById(R.id.tVEmailClienteInstalador);
