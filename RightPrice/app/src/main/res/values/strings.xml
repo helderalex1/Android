@@ -23,4 +23,19 @@
     <string name="ndOpen">Abrir</string>
     <string name="ndClose">Fechar</string>
     <string name="estatistica">Estatistica</string>
+    <string name="funcao">Função</string>
+    <string name="nome">Nome</string>
+    <string name="empresa">Empresa</string>
+    <string name="imagem_utilizador">imagem_utilizador</string>
+    <string name="imagem_cliente_instalador">imagem_cliente_instalador</string>
+    <string name="nif">Nif:</string>
+    <string name="telemovel">Telemovel:</string>
+    <string name="nome_com_dois_pontos">Nome:</string>
+    <string name="categoria">Categoria:</string>
+    <string name="aceitar_utilizador">Aceitar Utilizador</string>
+    <string name="telemovel_com_dois_pontos">Telemovel:</string>
+    <string name="categoria_com_dois_pontos">Categoria:</string>
+    <string name="detalhes_utilizador_com_dois_pontos">Detalhes do utilizador: \</string>
+    <string name="Sem_utilizador_para_aceitar">Sem utilizador para aceitar</string>
+    <string name="ligar_com_dois_pontos">Ligar:</string>
 </resources>

@@ -52,10 +52,11 @@ public class ListaClientesInstaladorAdapter extends BaseAdapter {
         viewHolderLista.update(clientesInstaladores.get(position));
         return convertView;
     }
+
     private class ViewHolderLista{
         private final TextView nome, telemovel, nif, email;
         public ViewHolderLista(View convertView){
-            nome = convertView.findViewById(R.id.tVClienteInstalador);
+            nome = convertView.findViewById(R.id.tVNomeClienteInstalador);
             telemovel = convertView.findViewById(R.id.tVTelClienteInstalador);
             nif = convertView.findViewById(R.id.tVNifClienteInstalador);
             email = convertView.findViewById(R.id.tVEmailClienteInstalador);

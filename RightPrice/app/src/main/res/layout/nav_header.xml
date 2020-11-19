@@ -11,27 +11,28 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgView_utilizador_header"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_user" />
+        android:src="@drawable/ic_user"
+        android:contentDescription="@string/imagem_utilizador" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/TexVi_funcao_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Função" />
+        android:text="@string/funcao" />
 
     <TextView
-        android:id="@+id/tVNome"
+        android:id="@+id/tVNome_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nome" />
+        android:text="@string/nome" />
 
     <TextView
-        android:id="@+id/tVEmpresa"
+        android:id="@+id/tVEmpresa_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Empresa" />
+        android:text="@string/empresa" />
 
 </LinearLayout>
