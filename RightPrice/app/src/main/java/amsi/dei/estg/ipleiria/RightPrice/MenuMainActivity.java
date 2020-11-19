@@ -53,7 +53,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 break;
         }
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_menu);
         setSupportActionBar(toolbar);
         navigationView = findViewById(R.id.nav_view);
 

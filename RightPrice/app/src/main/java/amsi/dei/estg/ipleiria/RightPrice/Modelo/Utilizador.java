@@ -4,7 +4,7 @@ import android.graphics.drawable.BitmapDrawable;
 
 import java.util.function.BinaryOperator;
 
-public class Utilizadores {
+public class Utilizador {
     private int id;
     private String username;
     private String nome_empresa;
@@ -14,7 +14,7 @@ public class Utilizadores {
     private int categoria_id;
     private int status;
 
-    public Utilizadores(int id, String username, String nome_empresa, int telemovel, String email, int imagem, int categoria_id, int status) {
+    public Utilizador(int id, String username, String nome_empresa, int telemovel, String email, int imagem, int categoria_id, int status) {
         this.id = id;
         this.username = username;
         this.nome_empresa = nome_empresa;

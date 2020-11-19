@@ -12,6 +12,7 @@
         android:theme="@style/Theme.RightPrice">
 
 <activity android:name=".Admin.Detalhes_aceitar_utilizador_admin" android:parentActivityName=".Admin.Detalhes_aceitar_utilizador_admin" />
+
         <activity
             android:name=".MenuMainActivity"
             android:screenOrientation="portrait"

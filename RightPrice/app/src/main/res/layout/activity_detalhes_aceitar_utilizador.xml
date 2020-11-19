@@ -7,7 +7,8 @@ android:layout_height="match_parent"
 android:orientation="vertical"
 tools:context=".Admin.Detalhes_aceitar_utilizador_admin">
 
-<androidx.core.widget.NestedScrollView
+
+    <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -96,15 +97,21 @@ tools:context=".Admin.Detalhes_aceitar_utilizador_admin">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:gravity="center">
 
             <Button
-                android:id="@+id/button_aceitar_utilizador_pendente"
+                android:id="@+id/btn_aceitar_utilizador_pendente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/main_color"
                 android:text="@string/aceitar_utilizador" />
+
+            <Button
+                android:id="@+id/btn_recusar_utilizador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recusar Utilizador"
+                android:backgroundTint="@color/main_color"/>
         </LinearLayout>
 
     </LinearLayout>

@@ -9,27 +9,26 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.ClientesInstalador;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizadores;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class Utilizadores_aceitar_Adapter extends BaseAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private ArrayList<Utilizadores> utilizadores;
-    public Utilizadores_aceitar_Adapter(Context context, ArrayList<Utilizadores> utilizadores){
+    private ArrayList<Utilizador> utilizadors;
+    public Utilizadores_aceitar_Adapter(Context context, ArrayList<Utilizador> utilizadors){
         this.context = context;
-        this.utilizadores = utilizadores;
+        this.utilizadors = utilizadors;
     }
     @Override
     public int getCount() {
-        return utilizadores.size();
+        return utilizadors.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return utilizadores.get(position);
+        return utilizadors.get(position);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class Utilizadores_aceitar_Adapter extends BaseAdapter {
             viewHolderLista = new ViewHolderLista(convertView);
             convertView.setTag(viewHolderLista);
         }
-        viewHolderLista.update(utilizadores.get(position));
+        viewHolderLista.update(utilizadors.get(position));
         return convertView;
     }
 
@@ -62,7 +61,7 @@ public class Utilizadores_aceitar_Adapter extends BaseAdapter {
             email = convertView.findViewById(R.id.tvEmailAceitarUtilizador);
             categoria = convertView.findViewById(R.id.tvCategoriaAceitarUtilizador);
         }
-        public void update(Utilizadores utilizadores){
+        public void update(Utilizador utilizadores){
             nome.setText(utilizadores.getUsername());
             empresa.setText(utilizadores.getNome_empresa());
             email.setText(utilizadores.getEmail());

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizadores;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class UtilizadoresPendentesItem extends Fragment {
@@ -35,9 +35,9 @@ public class UtilizadoresPendentesItem extends Fragment {
     }
 
     private void carregarutilizadores() {
-        ArrayList<Utilizadores> utilizadores = SingletonGerirOrcamentos.getInstance().getUtilizadores_array();
-        if(utilizadores.size() > 0){
-            Utilizadores utilizador = utilizadores.get(0);
+        ArrayList<Utilizador> utilizadors = SingletonGerirOrcamentos.getInstance().getUtilizadores_array();
+        if(utilizadors.size() > 0){
+            Utilizador utilizador = utilizadors.get(0);
             nome.setText(utilizador.getUsername());
             empresa.setText(utilizador.getNome_empresa());
             email.setText(utilizador.getEmail());
