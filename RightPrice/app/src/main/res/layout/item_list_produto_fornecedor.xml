@@ -31,7 +31,7 @@
                     android:text="Nome Produto:" />
 
                 <TextView
-                    android:id="@+id/tVNome_Obra"
+                    android:id="@+id/tVNome_Produto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -53,7 +53,7 @@
                     android:text="Referência:" />
 
                 <TextView
-                    android:id="@+id/tVorcamento_cliente"
+                    android:id="@+id/tVReferencia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
@@ -70,10 +70,10 @@
                     android:id="@+id/tVData_orcamentod"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Descrição" />
+                    android:text="Descrição:" />
 
                 <TextView
-                    android:id="@+id/tVorcamento_data"
+                    android:id="@+id/tVDescrição"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,7 +94,7 @@
                     android:text="Preço:" />
 
                 <TextView
-                    android:id="@+id/tvorcamento_margem"
+                    android:id="@+id/tVPreço"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
