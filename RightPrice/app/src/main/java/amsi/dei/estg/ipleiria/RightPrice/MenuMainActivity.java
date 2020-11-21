@@ -1,9 +1,7 @@
 package amsi.dei.estg.ipleiria.RightPrice;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,12 +13,10 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Aceitar_Cliente_admin_Fragment;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Lista_Cliente_admin_Fragment;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Cliente_admin_Fragment;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.MainActivity_admin;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Lista_Clientes_Fornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.MainActivity_fornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Produto_Fornecedor_Fragment;
+import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Vistas_Listas.Lista_Clientes_Fornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.PerfilUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Adicionar_Fornecedor_Instalador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Clientes_Instalador;
@@ -32,7 +28,7 @@ import amsi.dei.estg.ipleiria.RightPrice.Instalador.Obras_Fragment;
 public class MenuMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private NavigationView navigationView;
-    private DrawerLayout drawerInstalador, drawerFornecedor, drawerAdministrador;
+    private DrawerLayout drawer;
     private FragmentManager fragmentManager;
     public static final String numConta ="";
     private int numeconta=0;
@@ -41,30 +37,31 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
     protected void onCreate(Bundle savedInstanceState) {
         ActionBarDrawerToggle toggle = null;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_instalador);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        navigationView = findViewById(R.id.nav_view);
-        drawerInstalador = findViewById(R.id.drawer_layout_instalador);
-        drawerFornecedor = findViewById(R.id.drawer_layout_fornecedor);
-        drawerAdministrador = findViewById(R.id.drawer_layout_administrador);
 
         numeconta= Integer.parseInt(getIntent().getStringExtra(numConta));
-        if(numeconta==1) {
-            toggle = new ActionBarDrawerToggle(this, drawerInstalador, toolbar, R.string.ndOpen, R.string.ndClose);
-            toggle.syncState();
-            drawerInstalador.addDrawerListener(toggle);
-        }else if(numeconta==2) {
-            toggle = new ActionBarDrawerToggle(this, drawerFornecedor, toolbar, R.string.ndOpen, R.string.ndClose);
-            toggle.syncState();
-            drawerFornecedor.addDrawerListener(toggle);
-        }else if(numeconta==3) {
-            toggle = new ActionBarDrawerToggle(this, drawerAdministrador, toolbar, R.string.ndOpen, R.string.ndClose);
-            toggle.syncState();
-            drawerAdministrador.addDrawerListener(toggle);
+        drawer=null;
+        switch (numeconta){
+            case 1:
+                setContentView(R.layout.activity_menu_instalador);
+                drawer = findViewById(R.id.drawer_layout_instalador);
+                break;
+            case 2:
+                setContentView(R.layout.activity_menu_fornecedor);
+                drawer = findViewById(R.id.drawer_layout_fornecedor);
+                break;
+            case 3:
+                setContentView(R.layout.activity_menu_administrador);
+                drawer= findViewById(R.id.drawer_layout_administrador);
+                break;
         }
 
+        Toolbar toolbar = findViewById(R.id.toolbar_menu);
+        setSupportActionBar(toolbar);
+        navigationView = findViewById(R.id.nav_view);
+
+            toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.ndOpen, R.string.ndClose);
+            toggle.syncState();
+            drawer.addDrawerListener(toggle);
 
         navigationView.setNavigationItemSelectedListener(this);
         fragmentManager = getSupportFragmentManager();
@@ -109,7 +106,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_fornecedor_estatistica:
                 fragment = new MainActivity_fornecedor();
                 setTitle(menuItem.getTitle());
-                break;
+                break;*/
             case R.id.nav_fornecedor_instalador:
                 fragment = new Lista_Clientes_Fornecedor();
                 setTitle(menuItem.getTitle());
@@ -117,27 +114,27 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_fornecedor_produto:
                 fragment = new Produto_Fornecedor_Fragment();
                 setTitle(menuItem.getTitle());
-                break;*/
+                break;
             /*case R.id.nav_fornecedor_sair:
                 fragment = new ;
                 setTitle(menuItem.getTitle());
                 break;*/
             case R.id.nav_administrador_cliente_pendente:
-                fragment = new Aceitar_Cliente_admin_Fragment();
+                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
-            case R.id.nav_administrador_clientes:
-                fragment = new Lista_Cliente_admin_Fragment();
+            /*case R.id.nav_administrador_clientes:
+                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
                 setTitle(menuItem.getTitle());
-                break;
-            case R.id.nav_administrador_conta:
+                break;*/
+            /*case R.id.nav_administrador_conta:
                 fragment = new PerfilUtilizador();
                 setTitle(menuItem.getTitle());
-                break;
-            case R.id.nav_administrador_estatistica:
+                break;*/
+           /* case R.id.nav_administrador_estatistica:
                 fragment = new MainActivity_admin();
                 setTitle(menuItem.getTitle());
-                break;
+                break;*/
             /*case R.id.nav_administrador_sair:
                 fragment = new ;
                 setTitle(menuItem.getTitle());
@@ -146,13 +143,8 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
         if(fragment != null){
             fragmentManager.beginTransaction().replace(R.id.framelayout2,fragment).commit();
         }
-        if(numeconta==1) {
-            drawerInstalador.closeDrawer(GravityCompat.START);
-        }else if(numeconta==2) {
-            drawerFornecedor.closeDrawer(GravityCompat.START);
-        }else if(numeconta==3) {
-            drawerAdministrador.closeDrawer(GravityCompat.START);
-        }
+            drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 }

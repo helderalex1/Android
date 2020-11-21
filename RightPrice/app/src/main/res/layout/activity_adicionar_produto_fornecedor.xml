@@ -23,16 +23,15 @@
                 app:srcCompat="@mipmap/ic_produto" />
 
             <EditText
-                android:id="@+id/nome"
+                android:id="@+id/edtNomeProduto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Nome Produto"
-                android:enabled="false"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/referencia"
+                android:id="@+id/edtReferênciaProduto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -40,7 +39,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/descricao"
+                android:id="@+id/edtDescrição"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -48,7 +47,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/preco"
+                android:id="@+id/edtPreçoProduto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

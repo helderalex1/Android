@@ -77,15 +77,11 @@ public class MainActivity extends AppCompatActivity {
         tabLoginRegistar.dismiss();
     }
 
-    public void Fechar_popup_registo(View view) {
-        tabLoginRegistar.dismiss();
-    }
-
 
     public void onclick_login(View view) {
        tabLoginRegistar.dismiss();
         Intent intent = new Intent( this, MenuMainActivity.class);
-        intent.putExtra(MenuMainActivity.numConta,"1");
+        intent.putExtra(MenuMainActivity.numConta,"2");
         startActivity(intent);
     }
 }

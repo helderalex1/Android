@@ -9,7 +9,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageViewclientes_instalador"
+            android:id="@+id/imgVi_clientes_instalador"
             android:layout_width="100dp"
             android:layout_height="136dp"
             app:srcCompat="@mipmap/ic_orcamento" />
@@ -31,7 +31,7 @@
                     android:text="Nome Obra:" />
 
                 <TextView
-                    android:id="@+id/tVNome_Obra"
+                    android:id="@+id/tVNome_Produto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -53,7 +53,7 @@
                     android:text="Cliente:" />
 
                 <TextView
-                    android:id="@+id/tVorcamento_cliente"
+                    android:id="@+id/tVReferencia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
@@ -73,7 +73,7 @@
                     android:text="Data:" />
 
                 <TextView
-                    android:id="@+id/tVorcamento_data"
+                    android:id="@+id/tVDescrição"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,7 +94,7 @@
                     android:text="Margem:" />
 
                 <TextView
-                    android:id="@+id/tvorcamento_margem"
+                    android:id="@+id/tVPreço"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"

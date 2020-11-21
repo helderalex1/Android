@@ -9,16 +9,19 @@
     <ListView
         android:id="@+id/lV_produto_fornecedor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+
+    </ListView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabaddproduto"
+        android:id="@+id/fabAddProdutoFornecedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="10dp"
-        android:backgroundTint="#E91E63"
         android:clickable="true"
-        android:src="@drawable/ic_floating_adicionar"
-        android:contentDescription="TODO" />
+        android:backgroundTint="#E91E63"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_floating_adicionar" />
 
 </FrameLayout>
