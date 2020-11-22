@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -9,16 +8,4 @@
 
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always"/>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/item_pesquisa"
-        android:icon="@drawable/ic_pesquisar"
-        android:title="Procurar Item"
-
-        app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always"/>
->>>>>>> PWSAP-128-cdigo-para-abrir-os-clientes-d
 </menu>

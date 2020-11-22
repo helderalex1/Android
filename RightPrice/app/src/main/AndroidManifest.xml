@@ -12,10 +12,7 @@
         android:theme="@style/Theme.RightPrice">
 
 <activity android:name=".Admin.Detalhes_aceitar_utilizador_admin" android:parentActivityName=".Admin.Detalhes_aceitar_utilizador_admin" />
-<<<<<<< HEAD
-=======
 <activity android:name=".Fornecedor.DetalhesProdutoFornecedor" />
->>>>>>> PWSAP-128-cdigo-para-abrir-os-clientes-d
 
         <activity
             android:name=".MenuMainActivity"
