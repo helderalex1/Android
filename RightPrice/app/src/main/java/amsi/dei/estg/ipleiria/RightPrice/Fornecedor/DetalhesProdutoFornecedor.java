@@ -16,14 +16,14 @@ public class DetalhesProdutoFornecedor extends AppCompatActivity {
     public static final String DETALHES_PRODUTO ="produto";
     public static final int ADICIONAR = 1;
     public static final int ACEITAR = 2;
-    public static final int EDITAR = 2;
+    public static final int EDITAR = 3;
     private ProdutosFornecedor produtosFornecedor;
     int id_produto;
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_adicionar_produto_fornecedor);
-        nome_produto = findViewById(R.id.edtNomeProduto);
+        nome_produto = findViewById(R.id.edtNomeClienteInstalador);
         referência = findViewById(R.id.edtReferênciaProduto);
         descrição = findViewById(R.id.edtDescrição);
         preço = findViewById(R.id.edtPreçoProduto);

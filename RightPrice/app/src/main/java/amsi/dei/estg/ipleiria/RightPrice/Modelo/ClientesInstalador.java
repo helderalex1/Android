@@ -4,7 +4,7 @@ public class ClientesInstalador {
     private int id;
     private int user_id;
     private String nome;
-    private int telemovel;
+    private int telefone;
     private int nif;
     private String email;
 
@@ -28,12 +28,12 @@ public class ClientesInstalador {
         this.nome = nome;
     }
 
-    public int getTelemovel() {
-        return telemovel;
+    public int getTelefone() {
+        return telefone;
     }
 
-    public void setTelemovel(int telemovel) {
-        this.telemovel = telemovel;
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
     }
 
     public int getNif() {
@@ -52,11 +52,11 @@ public class ClientesInstalador {
         this.email = email;
     }
 
-    public ClientesInstalador(int id, int user_id, String nome, int telemovel, int nif, String email) {
+    public ClientesInstalador(int id, int user_id, String nome, int telefone, int nif, String email) {
         this.id = id;
         this.user_id = user_id;
         this.nome = nome;
-        this.telemovel = telemovel;
+        this.telefone = telefone;
         this.nif = nif;
         this.email = email;
     }

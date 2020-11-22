@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     public void onclick_login(View view) {
        tabLoginRegistar.dismiss();
         Intent intent = new Intent( this, MenuMainActivity.class);
-        intent.putExtra(MenuMainActivity.numConta,"2");
+        intent.putExtra(MenuMainActivity.numConta,"1");
         startActivity(intent);
     }
 }

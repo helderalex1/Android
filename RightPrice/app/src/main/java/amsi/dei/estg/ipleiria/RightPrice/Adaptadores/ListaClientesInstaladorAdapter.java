@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -63,7 +62,7 @@ public class ListaClientesInstaladorAdapter extends BaseAdapter {
         }
         public void update(ClientesInstalador clientesInstalador){
             nome.setText(clientesInstalador.getNome());
-            telemovel.setText(""+clientesInstalador.getTelemovel());
+            telemovel.setText(""+clientesInstalador.getTelefone());
             nif.setText(""+clientesInstalador.getNif());
             email.setText(clientesInstalador.getEmail());
         }

@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.ProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class Adicionar_Produto_Fornecedor_Fragment extends Fragment {
@@ -25,7 +24,7 @@ public class Adicionar_Produto_Fornecedor_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.item_list_produto_fornecedor, container, false);
-        nome_produto = view.findViewById(R.id.edtNomeProduto);
+        nome_produto = view.findViewById(R.id.edtNomeClienteInstalador);
         referência = view.findViewById(R.id.edtReferênciaProduto);
         descrição = view.findViewById(R.id.edtDescrição);
         preço = view.findViewById(R.id.edtPreçoProduto);
