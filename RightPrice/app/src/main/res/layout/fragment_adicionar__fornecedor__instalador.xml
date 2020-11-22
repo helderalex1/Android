@@ -22,7 +22,7 @@ tools:context=".Instalador.Adicionar_Fornecedor_Instalador">
             android:layout_height="220dp" />
 
         <EditText
-            android:id="@+id/edtNomeProduto"
+            android:id="@+id/edtNomeClienteInstalador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -31,21 +31,21 @@ tools:context=".Instalador.Adicionar_Fornecedor_Instalador">
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/telefone_instalador"
+            android:id="@+id/edtTelClienteInstalador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Introduza o telefone"
             android:inputType="textPersonName" />
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/edtEmailClienteInstalador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Introduza o email"
             android:inputType="textPersonName" />
         <EditText
-            android:id="@+id/Nif_instalador"
+            android:id="@+id/edtNifClienteInstalador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

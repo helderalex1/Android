@@ -23,7 +23,7 @@
                 app:srcCompat="@mipmap/ic_produto" />
 
             <EditText
-                android:id="@+id/edtNomeProduto"
+                android:id="@+id/edtNomeClienteInstalador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

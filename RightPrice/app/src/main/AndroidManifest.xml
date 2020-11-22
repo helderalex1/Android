@@ -13,11 +13,11 @@
 
 <activity android:name=".Admin.Detalhes_aceitar_utilizador_admin" android:parentActivityName=".Admin.Detalhes_aceitar_utilizador_admin" />
 <activity android:name=".Fornecedor.DetalhesProdutoFornecedor" />
-
+<activity android:name=".Instalador.Adicionar_Cliente_Instalador"/>
         <activity
             android:name=".MenuMainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name="amsi.dei.estg.ipleiria.RightPrice.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
