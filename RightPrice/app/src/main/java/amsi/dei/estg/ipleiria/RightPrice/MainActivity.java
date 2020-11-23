@@ -32,13 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 tabLoginRegistar.show(getSupportFragmentManager(),"Login/Registo");
             }
         });
-
-
     }
-
-
-
-
 
     public void facebookOnClick(View view) {
         try {

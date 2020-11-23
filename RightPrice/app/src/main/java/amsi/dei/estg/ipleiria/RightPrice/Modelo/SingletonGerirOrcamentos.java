@@ -30,7 +30,9 @@ public class SingletonGerirOrcamentos {
         utilizadores_array=new ArrayList<Utilizador>();
         utilizadores_array.add(new Utilizador(1, "Manuel", 34221,"Continente", 919564869, "a@a.pt", 0, 1, 9,1));
         utilizadores_array.add(new Utilizador(2, "Rui12", 3213121,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
-        utilizadores_array.add(new Utilizador(3, "Rui122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,3));
+        utilizadores_array.add(new Utilizador(3, "Rui122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        utilizadores_array.add(new Utilizador(4, "Ruhrthrr323i122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        utilizadores_array.add(new Utilizador(5, "Rufsdfshrghi122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
         fornecedor_instaladores = new ArrayList<FornecedorInstalador>();
         fornecedor_instaladores.add(new FornecedorInstalador(1,2));
         fornecedor_instaladores.add(new FornecedorInstalador(1,3));
@@ -123,19 +125,33 @@ public class SingletonGerirOrcamentos {
         return produtosFornecedortemp;
     }
 
-    /*public ArrayList<Utilizador> getFornecedores(int id){
+    public ArrayList<Utilizador> getFornecedores(int id){
+        int id_categoriainstalador = 0;
+        boolean existe = false;
         ArrayList<Utilizador> fornecedorestemp;
         fornecedorestemp = new ArrayList<Utilizador>();
-        for(Utilizador utilizador:utilizadores_array){
-            if(utilizador.getId() == id)
-                if (utilizador.getId() == fornecedor_instalador.getId_fornecedor()) {
-                for (FornecedorInstalador fornecedor_instalador : fornecedor_instaladores){
+        for(Utilizador utilizador : utilizadores_array){
+            if(utilizador.getId()== id){
+                id_categoriainstalador= utilizador.getCategoria_id();
 
-                        fornecedorestemp.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNif(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
+            }
+        }
+        if(id_categoriainstalador != 0) {
+            for (Utilizador utilizador : utilizadores_array) {
+                if (utilizador.getCategoria_id() == id_categoriainstalador && utilizador.getUser_id() == 2) {
+                    for(FornecedorInstalador fornecedorInstalador:fornecedor_instaladores){
+                        if(fornecedorInstalador.getId_instalador() != id && fornecedorInstalador.getId_fornecedor() == utilizador.getId()){
+                            existe = true;
+                        }
+                        break;
+                    }
+                    if(!existe){
+                        fornecedorestemp.add(new Utilizador(utilizador.getId(), utilizador.getUsername(), utilizador.getNif(), utilizador.getNome_empresa(), utilizador.getTelemovel(), utilizador.getEmail(), utilizador.getImagem(), utilizador.getCategoria_id(), utilizador.getStatus(), utilizador.getUser_id()));
+                    }
                 }
-             }
+                existe=false;
+            }
         }
         return fornecedorestemp;
-    }*/
+    }
 }
-
