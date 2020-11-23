@@ -28,7 +28,6 @@ import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapte
 import amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.ProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 import static amsi.dei.estg.ipleiria.RightPrice.Fornecedor.DetalhesProdutoFornecedor.DETALHES_PRODUTO;

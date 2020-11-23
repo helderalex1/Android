@@ -20,9 +20,9 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaClientesInstaladorAdapter;
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapter;
 import amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin;
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.UtilizadoresAceitarAdapter;
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaClientesInstaladorAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
@@ -42,7 +42,7 @@ public class Lista_Clientes_Fornecedor extends Fragment {
         setHasOptionsMenu(true);
         utilizador = SingletonGerirOrcamentos.getInstance().getInstaladorFornecedor(1);
         lvListaClienteconhecerFornecedor = view.findViewById(R.id.lvListaClienteconhecerFornecedor);
-        lvListaClienteconhecerFornecedor.setAdapter(new Utilizadores_aceitar_Adapter(getContext(),utilizador));
+        lvListaClienteconhecerFornecedor.setAdapter(new UtilizadoresAceitarAdapter(getContext(),utilizador));
 
        lvListaClienteconhecerFornecedor.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
@@ -86,7 +86,7 @@ public class Lista_Clientes_Fornecedor extends Fragment {
                         temp_utilizador.add(utilizador);
                     }
                 }
-                lvListaClienteconhecerFornecedor.setAdapter(new Utilizadores_aceitar_Adapter(getContext(),temp_utilizador));
+                lvListaClienteconhecerFornecedor.setAdapter(new UtilizadoresAceitarAdapter(getContext(),temp_utilizador));
                 return true;
 
             }

@@ -7,6 +7,7 @@ import java.util.function.BinaryOperator;
 public class Utilizador {
     private int id;
     private String username;
+    private int nif;
     private String nome_empresa;
     private int telemovel;
     private String email;
@@ -15,9 +16,10 @@ public class Utilizador {
     private int status;
     private int user_id;
 
-    public Utilizador(int id, String username, String nome_empresa, int telemovel, String email, int imagem, int categoria_id, int status, int user_id) {
+    public Utilizador(int id, String username, int nif, String nome_empresa, int telemovel, String email, int imagem, int categoria_id, int status, int user_id) {
         this.id = id;
         this.username = username;
+        this.nif = nif;
         this.nome_empresa = nome_empresa;
         this.telemovel = telemovel;
         this.email = email;
@@ -39,6 +41,14 @@ public class Utilizador {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public int getNif() {
+        return nif;
+    }
+
+    public void setNif(int nif) {
+        this.nif = nif;
     }
 
     public String getNome_empresa() {

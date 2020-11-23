@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class Obras_Fragment extends Fragment {
+public class ObrasFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

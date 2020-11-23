@@ -6,7 +6,7 @@
     tools:context=".Fornecedor.Vistas_Listas.Lista_Clientes_Fornecedor">
 
     <ListView
-        android:id="@+id/lvListaClienteconhecerFornecedor"
+        android:id="@+id/lvListaClientesFornecedor"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

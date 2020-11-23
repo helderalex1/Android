@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Fornecedor_instalador;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.ProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
@@ -43,7 +42,7 @@ public class ListaProdutosFornecedor extends BaseAdapter {
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.item_list_produto_fornecedor, null);
+            convertView = layoutInflater.inflate(R.layout.item_list_clientes_fornecedor, null);
         }
         ListaProdutosFornecedor.ViewHolderLista viewHolderLista = (ListaProdutosFornecedor.ViewHolderLista) convertView.getTag();
         if(viewHolderLista == null){

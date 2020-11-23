@@ -1,6 +1,6 @@
 package amsi.dei.estg.ipleiria.RightPrice.Modelo;
 
-public class Fornecedor_instalador {
+public class FornecedorInstalador {
     int id_fornecedor;
     int id_instalador;
 
@@ -20,7 +20,7 @@ public class Fornecedor_instalador {
         this.id_instalador = id_instalador;
     }
 
-    public Fornecedor_instalador(int id_fornecedor, int id_instalador) {
+    public FornecedorInstalador(int id_fornecedor, int id_instalador) {
         this.id_fornecedor = id_fornecedor;
         this.id_instalador = id_instalador;
     }

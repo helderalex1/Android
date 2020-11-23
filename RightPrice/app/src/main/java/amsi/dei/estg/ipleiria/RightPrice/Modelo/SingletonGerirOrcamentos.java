@@ -2,13 +2,11 @@ package amsi.dei.estg.ipleiria.RightPrice.Modelo;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.Clientes_Instalador;
-
 public class SingletonGerirOrcamentos {
 
     private ArrayList<ClientesInstalador> clientesInstaladores;
     private ArrayList<Utilizador> utilizadores_array;
-    private ArrayList<Fornecedor_instalador> fornecedor_instaladores;
+    private ArrayList<FornecedorInstalador> fornecedor_instaladores;
     private ArrayList<ProdutosFornecedor> produtos_fornecedor;
     private static SingletonGerirOrcamentos instance = null;
 
@@ -30,15 +28,21 @@ public class SingletonGerirOrcamentos {
         clientesInstaladores.add(new ClientesInstalador(2,2, "B", 54321, 2020, "bb@b"));
         clientesInstaladores.add(new ClientesInstalador(3,2, "C", 54321, 2020, "bb@b"));
         utilizadores_array=new ArrayList<Utilizador>();
-        utilizadores_array.add(new Utilizador(1, "Manuel", "Continente", 919564869, "a@a.pt", 0, 1, 10,1));
-        utilizadores_array.add(new Utilizador(2, "Rui12", "Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
-        utilizadores_array.add(new Utilizador(3, "Rui122", "Captemp", 919705797, "a@ab.pt", 0, 1, 9,3));
-        fornecedor_instaladores = new ArrayList<Fornecedor_instalador>();
-        fornecedor_instaladores.add(new Fornecedor_instalador(1,2));
-        fornecedor_instaladores.add(new Fornecedor_instalador(1,3));
+        utilizadores_array.add(new Utilizador(1, "Manuel", 34221,"Continente", 919564869, "a@a.pt", 0, 1, 9,1));
+        utilizadores_array.add(new Utilizador(2, "Rui12", 3213121,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        utilizadores_array.add(new Utilizador(3, "Rui122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        utilizadores_array.add(new Utilizador(4, "Ruhrthrr323i122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        utilizadores_array.add(new Utilizador(5, "Rufsdfshrghi122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        fornecedor_instaladores = new ArrayList<FornecedorInstalador>();
+        fornecedor_instaladores.add(new FornecedorInstalador(1,2));
+        fornecedor_instaladores.add(new FornecedorInstalador(1,3));
         produtos_fornecedor = new ArrayList<ProdutosFornecedor>();
         produtos_fornecedor.add(new ProdutosFornecedor(1,"asASd",12,"sa",10,1));
         produtos_fornecedor.add(new ProdutosFornecedor(2,"bcs",12,"s2a",13,1));
+    }
+
+    public ArrayList<FornecedorInstalador> getFornecedoress() {
+        return new ArrayList<>(fornecedor_instaladores);
     }
 
     public ArrayList<ClientesInstalador> getClientesInstaladores() {
@@ -93,11 +97,11 @@ public class SingletonGerirOrcamentos {
     public ArrayList<Utilizador> getInstaladorFornecedor(int id_fornecedor){
         ArrayList<Utilizador> utilizadorestemp;
         utilizadorestemp = new ArrayList<Utilizador>();
-        for (Fornecedor_instalador fornecedor_instalador:fornecedor_instaladores) {
+        for (FornecedorInstalador fornecedor_instalador:fornecedor_instaladores) {
             if(fornecedor_instalador.getId_fornecedor() == id_fornecedor){
                 for (Utilizador utilizador : utilizadores_array) {
                     if (utilizador.getId()==fornecedor_instalador.getId_instalador()){
-                        utilizadorestemp.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
+                        utilizadorestemp.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNif(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
                     }
                 }
             }
@@ -130,5 +134,34 @@ public class SingletonGerirOrcamentos {
         }
         return produtosFornecedortemp;
     }
-}
 
+    public ArrayList<Utilizador> getFornecedores(int id){
+        int id_categoriainstalador = 0;
+        boolean existe = false;
+        ArrayList<Utilizador> fornecedorestemp;
+        fornecedorestemp = new ArrayList<Utilizador>();
+        for(Utilizador utilizador : utilizadores_array){
+            if(utilizador.getId()== id){
+                id_categoriainstalador= utilizador.getCategoria_id();
+
+            }
+        }
+        if(id_categoriainstalador != 0) {
+            for (Utilizador utilizador : utilizadores_array) {
+                if (utilizador.getCategoria_id() == id_categoriainstalador && utilizador.getUser_id() == 2) {
+                    for(FornecedorInstalador fornecedorInstalador:fornecedor_instaladores){
+                        if(fornecedorInstalador.getId_instalador() != id && fornecedorInstalador.getId_fornecedor() == utilizador.getId()){
+                            existe = true;
+                        }
+                        break;
+                    }
+                    if(!existe){
+                        fornecedorestemp.add(new Utilizador(utilizador.getId(), utilizador.getUsername(), utilizador.getNif(), utilizador.getNome_empresa(), utilizador.getTelemovel(), utilizador.getEmail(), utilizador.getImagem(), utilizador.getCategoria_id(), utilizador.getStatus(), utilizador.getUser_id()));
+                    }
+                }
+                existe=false;
+            }
+        }
+        return fornecedorestemp;
+    }
+}

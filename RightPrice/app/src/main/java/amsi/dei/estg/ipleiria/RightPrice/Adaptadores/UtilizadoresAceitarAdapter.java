@@ -9,28 +9,26 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.FornecedorInstalador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class ListaClientesFornecedorAdapter extends BaseAdapter {
+public class UtilizadoresAceitarAdapter extends BaseAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private ArrayList<FornecedorInstalador> fornecedor_instaladores;
-
-    public ListaClientesFornecedorAdapter(Context context, ArrayList<FornecedorInstalador> fornecedor_instaladores) {
+    private ArrayList<Utilizador> utilizadors;
+    public UtilizadoresAceitarAdapter(Context context, ArrayList<Utilizador> utilizadors){
         this.context = context;
-        this.fornecedor_instaladores = fornecedor_instaladores;
+        this.utilizadors = utilizadors;
     }
-
     @Override
     public int getCount() {
-        return fornecedor_instaladores.size();
+        return utilizadors.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return position;
+        return utilizadors.get(position);
     }
 
     @Override
@@ -44,27 +42,30 @@ public class ListaClientesFornecedorAdapter extends BaseAdapter {
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.item_list_clientes_fornecedor, null);
+            convertView = layoutInflater.inflate(R.layout.item_list_aceitar_cliente_admin, null);
         }
         ViewHolderLista viewHolderLista = (ViewHolderLista) convertView.getTag();
         if(viewHolderLista == null){
             viewHolderLista = new ViewHolderLista(convertView);
             convertView.setTag(viewHolderLista);
         }
-        viewHolderLista.update(fornecedor_instaladores.get(position));
+        viewHolderLista.update(utilizadors.get(position));
         return convertView;
     }
 
-
     private class ViewHolderLista{
-        private final TextView id_for, id_ins;
+        private final TextView nome, empresa, email,categoria;
         public ViewHolderLista(View convertView){
-            id_for = convertView.findViewById(R.id.tVNome_header);
-            id_ins = convertView.findViewById(R.id.tVEmpresa_header);
+            nome = convertView.findViewById(R.id.tVNomeAceitarUtilizador);
+            empresa = convertView.findViewById(R.id.tvEmpresaAceitarUtilizador);
+            email = convertView.findViewById(R.id.tvEmailAceitarUtilizador);
+            categoria = convertView.findViewById(R.id.tvCategoriaAceitarUtilizador);
         }
-        public void update(FornecedorInstalador clientesInstalador){
-            id_for.setText(clientesInstalador.getId_fornecedor());
-            id_ins.setText(""+clientesInstalador.getId_instalador());
+        public void update(Utilizador utilizadores){
+            nome.setText(utilizadores.getUsername());
+            empresa.setText(utilizadores.getNome_empresa());
+            email.setText(utilizadores.getEmail());
+            categoria.setText(""+utilizadores.getCategoria_id());
         }
     }
 }
