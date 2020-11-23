@@ -25,7 +25,7 @@ public class SingletonGerirOrcamentos {
         clientesInstaladores.add(new ClientesInstalador(1, 1, "A", 12345, 2020, "aa@a"));
         clientesInstaladores.add(new ClientesInstalador(2, 1, "B", 54321, 2020, "bb@b"));
         utilizadores_array=new ArrayList<Utilizador>();
-        utilizadores_array.add(new Utilizador(1, "Manuel", "Continente", 919564869, "a@a.pt", 0, 1, 9));
+        utilizadores_array.add(new Utilizador(1, "Manuel", "Continente", 919564869, "a@a.pt", 0, 1, 10));
         utilizadores_array.add(new Utilizador(2, "Rui", "Captemp", 919705797, "a@ab.pt", 0, 1, 9));
     }
 
@@ -42,8 +42,15 @@ public class SingletonGerirOrcamentos {
         return null;
     }
 
-    public ArrayList<Utilizador> getUtilizadores_array() {
-        return new ArrayList<>(utilizadores_array);
+    public ArrayList<Utilizador> getUtilizadores_pendentes_array() {
+        ArrayList<Utilizador> utilizadorespendentes;
+        utilizadorespendentes = new ArrayList<Utilizador>();
+        for (Utilizador utilizador: utilizadores_array) {
+            if (utilizador.getStatus()==9){
+                utilizadorespendentes.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus()));
+            }
+        }
+        return utilizadorespendentes;
     }
 
     public Utilizador getUtilizador(int id) {
@@ -53,6 +60,9 @@ public class SingletonGerirOrcamentos {
             }
         }
         return null;
+    }
+    public ArrayList<Utilizador> getUtilizadores_array(){
+        return new ArrayList<>(utilizadores_array);
     }
 }
 

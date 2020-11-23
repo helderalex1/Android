@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Admin;
+package amsi.dei.estg.ipleiria.RightPrice;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,23 +7,33 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 
+import java.util.ArrayList;
+import java.util.zip.Inflater;
+
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapter;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
     public static final String DETALHES_UTILIZADOR ="utilizador";
+    public static final String Tipo_abrir_atividade = "tipo";
     public static final int ACEITAR = 2;
+    public static final int Meus_Intaladores = 3;
+    private int Tipo_abrir ;
     private int id_utilizador;
     private Utilizador utilizador;
     private EditText nome, nome_empresa,telefone, email, categoria;
-    private Button aceitar_utilizador,ligar;
+    private Button aceitar_utilizador,ligar,recusar;
     private ImageView imagem_utilizador;
 
 
@@ -35,6 +45,7 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         setTitleColor(R.color.black);
         setContentView(R.layout.activity_detalhes_aceitar_utilizador);
         id_utilizador = getIntent().getIntExtra(DETALHES_UTILIZADOR, 0);
+        Tipo_abrir = getIntent().getIntExtra(Tipo_abrir_atividade,0);
         utilizador = SingletonGerirOrcamentos.getInstance().getUtilizador(id_utilizador);
         nome = findViewById(R.id.Nome_utilizador_pendente_detalhes);
         nome_empresa = findViewById(R.id.nome_empresa_utilizador_pendente);
@@ -43,10 +54,22 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         categoria = findViewById(R.id.categoria_utilizador_pendente);
         imagem_utilizador = findViewById(R.id.img_cliente_acetiar_cliente);
         aceitar_utilizador= findViewById(R.id.btn_aceitar_utilizador_pendente);
-
         ligar= findViewById(R.id.Btn_ligar_numero);
+        recusar= findViewById(R.id.btn_recusar_utilizador);
 
 
+
+        if (Tipo_abrir==0){
+            setResult(RESULT_CANCELED);
+            finish();
+        }else if (Tipo_abrir==1){
+            aceitar_utilizador.setVisibility(View.VISIBLE);
+            recusar.setVisibility(View.VISIBLE);
+
+        }else if (Tipo_abrir==2){
+            aceitar_utilizador.setVisibility(View.INVISIBLE);
+            recusar.setVisibility(View.INVISIBLE);
+        }
 
         if (utilizador!=null){
             setTitle(getString(R.string.detalhes_utilizador_com_dois_pontos)+ utilizador.getUsername());
@@ -67,6 +90,8 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
                 finish();
             }
         });
+
+
         ligar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,4 +116,18 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         }
         return true;
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if (id_utilizador!=0 && Tipo_abrir==2){
+            MenuInflater menuInflater = getMenuInflater();
+            menuInflater.inflate(R.menu.menu_apagar,menu);
+            return super.onCreateOptionsMenu(menu);
+        }
+
+        return false;
+
+
+    }
+
 }

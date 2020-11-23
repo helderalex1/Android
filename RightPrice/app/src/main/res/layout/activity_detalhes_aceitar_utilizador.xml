@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-tools:context=".Admin.Detalhes_aceitar_utilizador_admin">
+tools:context=".Detalhes_aceitar_utilizador_admin">
 
 
     <androidx.core.widget.NestedScrollView
@@ -34,7 +34,8 @@ tools:context=".Admin.Detalhes_aceitar_utilizador_admin">
                 android:ems="10"
                 android:enabled="false"
                 android:hint="Nome cliente"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                />
 
             <EditText
                 android:id="@+id/nome_empresa_utilizador_pendente"

@@ -1,5 +1,6 @@
 package amsi.dei.estg.ipleiria.RightPrice;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -13,7 +14,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Cliente_admin_Fragment;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Utilizadores_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.MainActivity_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.PerfilUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Adicionar_Fornecedor_Instalador;
@@ -65,6 +66,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
         fragmentManager = getSupportFragmentManager();
 
     }
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         Fragment fragment = null;
@@ -77,10 +79,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 fragment = new Clientes_Instalador();
                 setTitle(menuItem.getTitle());
                 break;
-            case R.id.nav_instalador_conta:
-                fragment = new PerfilUtilizador();
-                setTitle(menuItem.getTitle());
-                break;
+
             case R.id.nav_instalador_adicionar_fornecedor:
                 fragment = new Adicionar_Fornecedor_Instalador();
                 setTitle(menuItem.getTitle());
@@ -93,14 +92,8 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 fragment = new Obras_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
-          /*  case R.id.nav_instalador_sair:
-                fragment = new ;
-                setTitle(menuItem.getTitle());
-                break;*/
-           /* case R.id.nav_fornecedor_conta:
-                fragment = new PerfilUtilizador();
-                setTitle(menuItem.getTitle());
-                break;
+
+           /*
             case R.id.nav_fornecedor_estatistica:
                 fragment = new MainActivity_fornecedor();
                 setTitle(menuItem.getTitle());
@@ -113,30 +106,28 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 fragment = new Produto_Fornecedor_Fragment();
                 setTitle(menuItem.getTitle());
                 break;*/
-            /*case R.id.nav_fornecedor_sair:
-                fragment = new ;
-                setTitle(menuItem.getTitle());
-                break;*/
-            case R.id.nav_administrador_cliente_pendente:
-                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
-                setTitle(menuItem.getTitle());
-                break;
-            /*case R.id.nav_administrador_clientes:
-                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
-                setTitle(menuItem.getTitle());
-                break;*/
-            /*case R.id.nav_administrador_conta:
-                fragment = new PerfilUtilizador();
-                setTitle(menuItem.getTitle());
-                break;*/
-           /* case R.id.nav_administrador_estatistica:
+            case R.id.nav_administrador_estatistica:
                 fragment = new MainActivity_admin();
                 setTitle(menuItem.getTitle());
-                break;*/
-            /*case R.id.nav_administrador_sair:
-                fragment = new ;
+                break;
+
+            case R.id.nav_administrador_clientes:
+                fragment = new Lista_Aceitar_Utilizadores_admin();
                 setTitle(menuItem.getTitle());
-                break;*/
+                break;
+            case R.id.nav_administrador_cliente_pendente:
+                fragment = new Lista_Aceitar_Utilizadores_admin();
+                setTitle(menuItem.getTitle());
+                break;
+
+            case R.id.nav_sair:
+                finish();
+                break;
+
+            case R.id.nav_conta:
+                fragment = new PerfilUtilizador();
+                setTitle(menuItem.getTitle());
+                break;
         }
         if(fragment != null){
             fragmentManager.beginTransaction().replace(R.id.framelayout2,fragment).commit();
