@@ -20,8 +20,7 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaClientesInstaladorAdapter;
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapter;
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.UtilizadoresAceitarAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.Detalhes_aceitar_utilizador_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
@@ -40,7 +39,7 @@ public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
         setHasOptionsMenu(true);
         utilizadors =SingletonGerirOrcamentos.getInstance().getUtilizadores_array();
         lVListautilizadorespendentes= view.findViewById(R.id.lvUtilizadoresPendentes);
-        lVListautilizadorespendentes.setAdapter(new Utilizadores_aceitar_Adapter(getContext(), utilizadors));
+        lVListautilizadorespendentes.setAdapter(new UtilizadoresAceitarAdapter(getContext(), utilizadors));
         // Inflate the layout for this fragment
 
 
@@ -90,7 +89,7 @@ public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
                         temp_utilizador.add(utilizador);
                     }
                 }
-                lVListautilizadorespendentes.setAdapter(new Utilizadores_aceitar_Adapter(getContext(),temp_utilizador));
+                lVListautilizadorespendentes.setAdapter(new UtilizadoresAceitarAdapter(getContext(),temp_utilizador));
                 return true;
 
             }

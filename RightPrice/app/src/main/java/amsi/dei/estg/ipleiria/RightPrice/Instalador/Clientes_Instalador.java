@@ -24,19 +24,17 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaClientesInstaladorAdapter;
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.DetalhesProdutoFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.ClientesInstalador;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.ProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-import static amsi.dei.estg.ipleiria.RightPrice.Fornecedor.DetalhesProdutoFornecedor.DETALHES_PRODUTO;
-import static amsi.dei.estg.ipleiria.RightPrice.Instalador.Adicionar_Cliente_Instalador.DETALHES_CLIENTE_INSTALADOR;
+import static amsi.dei.estg.ipleiria.RightPrice.Instalador.AdicionarClienteInstalador.DETALHES_CLIENTE_INSTALADOR;
 
 public class Clientes_Instalador extends Fragment {
     private ListView lVListaClientesInstalador;
     private ArrayList<ClientesInstalador> clientesInstaladores;
+    private ArrayList<ClientesInstalador> fornecedores;
     private FloatingActionButton floatingActionButton;
     private SearchView searchView;
     @Override
@@ -52,7 +50,7 @@ public class Clientes_Instalador extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ClientesInstalador clientesInstalador = (ClientesInstalador) parent.getItemAtPosition(position);
-                Intent intent = new Intent(getContext(), Adicionar_Cliente_Instalador.class);
+                Intent intent = new Intent(getContext(), AdicionarClienteInstalador.class);
                 intent.putExtra(DETALHES_CLIENTE_INSTALADOR, clientesInstalador.getId());
                 startActivityForResult(intent, DetalhesProdutoFornecedor.ACEITAR);
             }
@@ -61,8 +59,8 @@ public class Clientes_Instalador extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(),Adicionar_Cliente_Instalador.class);
-                startActivityForResult(intent, Adicionar_Cliente_Instalador.EDITAR);
+                Intent intent = new Intent(getContext(), AdicionarClienteInstalador.class);
+                startActivityForResult(intent, AdicionarClienteInstalador.EDITAR);
             }
         });
         return view;

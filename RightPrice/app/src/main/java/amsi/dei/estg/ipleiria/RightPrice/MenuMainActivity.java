@@ -14,15 +14,12 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 
 import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Cliente_admin_Fragment;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.MainActivity_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Produto_Fornecedor_Fragment;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Vistas_Listas.Lista_Clientes_Fornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.PerfilUtilizador;
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.Adicionar_Fornecedor_Instalador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Clientes_Instalador;
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.Conhecer_Fornecedor_Fragment;
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.MainFragment_instalador;
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.Obras_Fragment;
+import amsi.dei.estg.ipleiria.RightPrice.Instalador.List_Conhecer_Fornecedor_Fragment;
+import amsi.dei.estg.ipleiria.RightPrice.Instalador.MainFragmentInstalador;
 
 
 public class MenuMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -72,7 +69,7 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
         Fragment fragment = null;
         switch (menuItem .getItemId()) {
             case R.id.nav_instalador_estatistica:
-                fragment = new MainFragment_instalador();
+                fragment = new MainFragmentInstalador();
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_instalador_cliente:
@@ -84,18 +81,18 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_instalador_adicionar_fornecedor:
-                fragment = new Adicionar_Fornecedor_Instalador();
+                fragment = new List_Conhecer_Fornecedor_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
-            case R.id.nav_instalador_fornecedor:
-                fragment = new Conhecer_Fornecedor_Fragment();
+           /* case R.id.nav_instalador_fornecedor:
+                fragment = new List_Conhecer_Fornecedor_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_instalador_obra:
                 fragment = new Obras_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
-          /*  case R.id.nav_instalador_sair:
+            case R.id.nav_instalador_sair:
                 fragment = new ;
                 setTitle(menuItem.getTitle());
                 break;*/

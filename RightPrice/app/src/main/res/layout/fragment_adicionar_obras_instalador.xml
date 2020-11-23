@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Instalador.Adicionar_Obras_Instalador_Fragment">
+    tools:context=".Instalador.AdicionarObrasInstaladorFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

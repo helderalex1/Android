@@ -16,32 +16,30 @@ import amsi.dei.estg.ipleiria.RightPrice.Modelo.ClientesInstalador;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class Adicionar_Cliente_Instalador extends AppCompatActivity {
-    private EditText nome,telefone,email,nif;
+public class AdicionarClienteInstalador extends AppCompatActivity {
     public static final String DETALHES_CLIENTE_INSTALADOR ="cliente";
     public static final int ADICIONAR = 1;
     public static final int ACEITAR = 2;
     public static final int EDITAR = 3;
-    private ClientesInstalador clientesInstalador;
     int user_id;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.fragment_adicionar__cliente__instalador_);
-        nome = findViewById(R.id.edtNomeClienteInstalador);
-        telefone = findViewById(R.id.edtTelClienteInstalador);
-        email = findViewById(R.id.edtEmailClienteInstalador);
-        nif = findViewById(R.id.edtNifClienteInstalador);
+        EditText nome = findViewById(R.id.edtNomeClienteInstalador);
+        EditText telefone = findViewById(R.id.edtTelClienteInstalador);
+        EditText email = findViewById(R.id.edtEmailClienteInstalador);
+        EditText nif = findViewById(R.id.edtNifClienteInstalador);
 
         user_id = getIntent().getIntExtra(DETALHES_CLIENTE_INSTALADOR,0);
-        clientesInstalador = SingletonGerirOrcamentos.getInstance().getClienteInstalador(user_id);
-        if (clientesInstalador!=null){
+        ClientesInstalador clientesInstalador = SingletonGerirOrcamentos.getInstance().getClienteInstalador(user_id);
+        if (clientesInstalador !=null){
             setTitle(getString(R.string.detalhes_utilizador_com_dois_pontos)+ clientesInstalador.getNome());
             nome.setText(clientesInstalador.getNome());
-            telefone.setText(""+clientesInstalador.getTelefone());
-            email.setText(clientesInstalador.getEmail());
-            nif.setText(""+clientesInstalador.getNif());
+            telefone.setText(String.valueOf(clientesInstalador.getTelefone()));
+            email.setText(String.valueOf(clientesInstalador.getEmail()));
+            nif.setText(String.valueOf(clientesInstalador.getNif()));
         }else{
             setTitle("Adicionar produto");
         }

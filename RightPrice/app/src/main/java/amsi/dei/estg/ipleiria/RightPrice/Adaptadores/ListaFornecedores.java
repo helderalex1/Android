@@ -9,28 +9,26 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.FornecedorInstalador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.ClientesInstalador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class ListaClientesFornecedorAdapter extends BaseAdapter {
-
+public class ListaFornecedores extends BaseAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
-    private ArrayList<FornecedorInstalador> fornecedor_instaladores;
-
-    public ListaClientesFornecedorAdapter(Context context, ArrayList<FornecedorInstalador> fornecedor_instaladores) {
+    private ArrayList<Utilizador> utilizadores;
+    public ListaFornecedores(Context context, ArrayList<Utilizador> utilizadores){
         this.context = context;
-        this.fornecedor_instaladores = fornecedor_instaladores;
+        this.utilizadores = utilizadores;
     }
-
     @Override
     public int getCount() {
-        return fornecedor_instaladores.size();
+        return utilizadores.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return position;
+        return utilizadores.get(position);
     }
 
     @Override
@@ -51,20 +49,23 @@ public class ListaClientesFornecedorAdapter extends BaseAdapter {
             viewHolderLista = new ViewHolderLista(convertView);
             convertView.setTag(viewHolderLista);
         }
-        viewHolderLista.update(fornecedor_instaladores.get(position));
+        viewHolderLista.update(utilizadores.get(position));
         return convertView;
     }
 
-
-    private class ViewHolderLista{
-        private final TextView id_for, id_ins;
+   private class ViewHolderLista{
+        private final TextView nome, empresa, email, categoria;
         public ViewHolderLista(View convertView){
-            id_for = convertView.findViewById(R.id.tVNome_header);
-            id_ins = convertView.findViewById(R.id.tVEmpresa_header);
+            nome = convertView.findViewById(R.id.tVNomeClienteFornecedor);
+            empresa = convertView.findViewById(R.id.tVEmpresaClienteFornecedor);
+            email = convertView.findViewById(R.id.tvEmailClienteFornecedor);
+            categoria = convertView.findViewById(R.id.tvCategoriaClienteFornecedor);
         }
-        public void update(FornecedorInstalador clientesInstalador){
-            id_for.setText(clientesInstalador.getId_fornecedor());
-            id_ins.setText(""+clientesInstalador.getId_instalador());
+        public void update(Utilizador utilizadores){
+            nome.setText(utilizadores.getUsername());
+            empresa.setText(utilizadores.getNome_empresa());
+            email.setText(utilizadores.getEmail());
+            categoria.setText(""+utilizadores.getCategoria_id());
         }
     }
 }

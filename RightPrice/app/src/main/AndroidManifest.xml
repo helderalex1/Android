@@ -13,7 +13,7 @@
 
 <activity android:name=".Admin.Detalhes_aceitar_utilizador_admin" android:parentActivityName=".Admin.Detalhes_aceitar_utilizador_admin" />
 <activity android:name=".Fornecedor.DetalhesProdutoFornecedor" />
-<activity android:name=".Instalador.Adicionar_Cliente_Instalador"/>
+<activity android:name=".Instalador.AdicionarClienteInstalador"/>
         <activity
             android:name=".MenuMainActivity"
             android:screenOrientation="portrait"

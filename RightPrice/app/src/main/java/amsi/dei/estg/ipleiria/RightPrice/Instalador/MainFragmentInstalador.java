@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 
-public class MainFragment_instalador extends Fragment {
+public class MainFragmentInstalador extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
