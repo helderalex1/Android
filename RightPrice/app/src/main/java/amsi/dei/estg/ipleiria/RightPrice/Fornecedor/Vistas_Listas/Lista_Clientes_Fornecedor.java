@@ -22,11 +22,11 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaClientesInstaladorAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapter;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Detalhes_aceitar_utilizador_admin;
+import amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
-import static amsi.dei.estg.ipleiria.RightPrice.Admin.Detalhes_aceitar_utilizador_admin.DETALHES_UTILIZADOR;
+import static amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin.DETALHES_UTILIZADOR;
 
 public class Lista_Clientes_Fornecedor extends Fragment {
 
