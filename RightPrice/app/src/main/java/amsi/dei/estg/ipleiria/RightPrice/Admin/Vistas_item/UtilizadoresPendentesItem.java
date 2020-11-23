@@ -35,7 +35,7 @@ public class UtilizadoresPendentesItem extends Fragment {
     }
 
     private void carregarutilizadores() {
-        ArrayList<Utilizador> utilizadors = SingletonGerirOrcamentos.getInstance().getUtilizadores_array();
+        ArrayList<Utilizador> utilizadors = SingletonGerirOrcamentos.getInstance().getUtilizadores_pendentes_array();
         if(utilizadors.size() > 0){
             Utilizador utilizador = utilizadors.get(0);
             nome.setText(utilizador.getUsername());
