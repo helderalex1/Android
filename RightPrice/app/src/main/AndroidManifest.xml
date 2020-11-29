@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RightPrice">
 
-<activity android:name=".Admin.Detalhes_aceitar_utilizador_admin" android:parentActivityName=".Admin.Detalhes_aceitar_utilizador_admin" />
+<activity android:name="Detalhes_aceitar_utilizador_admin" android:parentActivityName="Detalhes_aceitar_utilizador_admin" />
 <activity android:name=".Fornecedor.DetalhesProdutoFornecedor" />
 <activity android:name=".Instalador.AdicionarClienteInstalador"/>
         <activity
@@ -28,5 +28,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

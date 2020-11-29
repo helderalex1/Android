@@ -21,11 +21,12 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.UtilizadoresAceitarAdapter;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Detalhes_aceitar_utilizador_admin;
+import amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
-import static amsi.dei.estg.ipleiria.RightPrice.Admin.Detalhes_aceitar_utilizador_admin.DETALHES_UTILIZADOR;
+import static amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin.DETALHES_UTILIZADOR;
+import static amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin.Tipo_abrir_atividade;
 
 public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
     private ListView lVListautilizadorespendentes;
@@ -35,9 +36,9 @@ public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_lista_aceitar_cliente_admin, container, false);
+        View view = inflater.inflate(R.layout.fragment_lista_aceitar_utilizador_admin, container, false);
         setHasOptionsMenu(true);
-        utilizadors =SingletonGerirOrcamentos.getInstance().getUtilizadores_array();
+        utilizadors =SingletonGerirOrcamentos.getInstance().getUtilizadores_pendentes_array();
         lVListautilizadorespendentes= view.findViewById(R.id.lvUtilizadoresPendentes);
         lVListautilizadorespendentes.setAdapter(new UtilizadoresAceitarAdapter(getContext(), utilizadors));
         // Inflate the layout for this fragment
@@ -50,11 +51,11 @@ public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
                 Utilizador temutilizador =(Utilizador) parent.getItemAtPosition(position);
                 Intent intent = new Intent(getContext(), Detalhes_aceitar_utilizador_admin.class);
                 intent.putExtra(DETALHES_UTILIZADOR,temutilizador.getId());
+                intent.putExtra(Tipo_abrir_atividade,1);
                 startActivityForResult(intent,Detalhes_aceitar_utilizador_admin.ACEITAR);
 
             }
         });
-
 
         return view;
     }
@@ -84,7 +85,7 @@ public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 ArrayList<Utilizador> temp_utilizador = new ArrayList<>();
-                for (Utilizador utilizador: SingletonGerirOrcamentos.getInstance().getUtilizadores_array()) {
+                for (Utilizador utilizador: SingletonGerirOrcamentos.getInstance().getUtilizadores_pendentes_array()) {
                     if (utilizador.getUsername().toLowerCase().contains(s.toLowerCase())) {
                         temp_utilizador.add(utilizador);
                     }

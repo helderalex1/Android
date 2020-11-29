@@ -15,8 +15,8 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 
 import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Cliente_admin_Fragment;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Utilizadores_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.MainActivity_admin;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_utilizadores_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.MainActivity_fornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Produto_Fornecedor_Fragment;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Vistas_Listas.Lista_Clientes_Fornecedor;
@@ -108,17 +108,18 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
                 fragment = new Produto_Fornecedor_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
-          /*  case R.id.nav_fornecedor_sair:
-                fragment = new ;
+
+*/
+            case R.id.nav_administrador_estatistica:
+                fragment = new MainActivity_admin();
                 setTitle(menuItem.getTitle());
                 break;
-*/
             case R.id.nav_administrador_clientes:
-                fragment = new Lista_Aceitar_Utilizadores_admin();
+                fragment = new Lista_utilizadores_admin();
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_administrador_cliente_pendente:
-                fragment = new Lista_Aceitar_Utilizadores_admin();
+                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
                 setTitle(menuItem.getTitle());
                 break;
 

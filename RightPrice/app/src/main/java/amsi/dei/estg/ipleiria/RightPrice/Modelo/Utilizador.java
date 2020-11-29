@@ -16,10 +16,9 @@ public class Utilizador {
     private int status;
     private int user_id;
 
-    public Utilizador(int id, String username, int nif, String nome_empresa, int telemovel, String email, int imagem, int categoria_id, int status, int user_id) {
+    public Utilizador(int id, String username, String nome_empresa, int telemovel, String email, int imagem, int categoria_id, int status, int user_id) {
         this.id = id;
         this.username = username;
-        this.nif = nif;
         this.nome_empresa = nome_empresa;
         this.telemovel = telemovel;
         this.email = email;
