@@ -114,6 +114,18 @@ tools:context=".Detalhes_aceitar_utilizador_admin">
                 android:text="Recusar Utilizador"
                 android:backgroundTint="@color/main_color"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnBanirDesbanirAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/main_color"
+                android:text="@string/banir_utilizador" />
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

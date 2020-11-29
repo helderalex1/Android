@@ -38,4 +38,6 @@
     <string name="detalhes_utilizador_com_dois_pontos">Detalhes do utilizador: \</string>
     <string name="Sem_utilizador_para_aceitar">Sem utilizador para aceitar</string>
     <string name="ligar_com_dois_pontos">Ligar:</string>
+    <string name="banir_utilizador">Banir Utilizador</string>
+    <string name="desbanir_utilizador">Desbanir Utilizador</string>
 </resources>

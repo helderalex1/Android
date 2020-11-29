@@ -21,7 +21,6 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaUtilizadoresAdapter;
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapter;
 import amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
@@ -46,10 +45,8 @@ public class Lista_utilizadores_admin extends Fragment {
         lVListautilizadores = view.findViewById(R.id.lvUtilizadoresAdmin);
         lVListautilizadores.setAdapter(new ListaUtilizadoresAdapter(getContext(), utilizadores));
 
-        return view;
-    }
 
-    /*
+
 
         lVListautilizadores.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -57,13 +54,12 @@ public class Lista_utilizadores_admin extends Fragment {
                 Utilizador temutilizador = (Utilizador) parent.getItemAtPosition(position);
                 Intent intent = new Intent(getContext(), Detalhes_aceitar_utilizador_admin.class);
                 intent.putExtra(DETALHES_UTILIZADOR, temutilizador.getId());
-                intent.putExtra(Tipo_abrir_atividade, 1);
+                intent.putExtra(Tipo_abrir_atividade, 2);
                 startActivityForResult(intent, Detalhes_aceitar_utilizador_admin.ACEITAR);
 
             }
         });
-
-
+        return view;
     }
 
 
@@ -77,9 +73,9 @@ public class Lista_utilizadores_admin extends Fragment {
 
         super.onActivityResult(requestCode, resultCode, data);
     }
-}
 
-  /*  @Override
+
+    @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu_pesquisa, menu);
         final MenuItem itemPesquisa = menu.findItem(R.id.item_pesquisa);
@@ -94,12 +90,12 @@ public class Lista_utilizadores_admin extends Fragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 ArrayList<Utilizador> temp_utilizador = new ArrayList<>();
-                for (Utilizador utilizador : SingletonGerirOrcamentos.getInstance().getUtilizadores_pendentes_array()) {
+                for (Utilizador utilizador : SingletonGerirOrcamentos.getInstance().getUtilizadores_array()) {
                     if (utilizador.getUsername().toLowerCase().contains(s.toLowerCase())) {
                         temp_utilizador.add(utilizador);
                     }
                 }
-                lVListautilizadorespendentes.setAdapter(new Utilizadores_aceitar_Adapter(getContext(), temp_utilizador));
+                lVListautilizadores.setAdapter(new ListaUtilizadoresAdapter(getContext(), temp_utilizador));
                 return true;
 
             }
@@ -108,7 +104,7 @@ public class Lista_utilizadores_admin extends Fragment {
 
 
         super.onCreateOptionsMenu(menu, inflater);
-    }*/
+    }
 
 }
 

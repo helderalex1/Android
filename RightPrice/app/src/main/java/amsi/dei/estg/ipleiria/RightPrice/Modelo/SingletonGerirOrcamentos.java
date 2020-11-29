@@ -28,11 +28,11 @@ public class SingletonGerirOrcamentos {
         clientesInstaladores.add(new ClientesInstalador(2,2, "B", 54321, 2020, "bb@b"));
         clientesInstaladores.add(new ClientesInstalador(3,2, "C", 54321, 2020, "bb@b"));
         utilizadores_array=new ArrayList<Utilizador>();
-        utilizadores_array.add(new Utilizador(1, "Manuel", 34221,"Continente", 919564869, "a@a.pt", 0, 1, 9,1));
-        utilizadores_array.add(new Utilizador(2, "Rui12", 3213121,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
-        utilizadores_array.add(new Utilizador(3, "Rui122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
-        utilizadores_array.add(new Utilizador(4, "Ruhrthrr323i122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
-        utilizadores_array.add(new Utilizador(5, "Rufsdfshrghi122", 3213,"Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        utilizadores_array.add(new Utilizador(1, "Manuel","Continente", 919564869, "a@a.pt", 0, 1, 0,1));
+        utilizadores_array.add(new Utilizador(2, "Rui12", "Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
+        utilizadores_array.add(new Utilizador(3, "Rui122", "Captemp", 919705797, "a@ab.pt", 0, 1, 10,2));
+        utilizadores_array.add(new Utilizador(4, "Ruhrthrr323i122", "Captemp", 919705797, "a@ab.pt", 0, 1, 10,2));
+        utilizadores_array.add(new Utilizador(5, "Rufsdfshrghi122", "Captemp", 919705797, "a@ab.pt", 0, 1, 10,2));
         fornecedor_instaladores = new ArrayList<FornecedorInstalador>();
         fornecedor_instaladores.add(new FornecedorInstalador(1,2));
         fornecedor_instaladores.add(new FornecedorInstalador(1,3));
@@ -78,7 +78,14 @@ public class SingletonGerirOrcamentos {
         return null;
     }
     public ArrayList<Utilizador> getUtilizadores_array(){
-        return new ArrayList<>(utilizadores_array);
+       ArrayList<Utilizador> utilizadoresaceites;
+       utilizadoresaceites = new ArrayList<Utilizador>();
+       for (Utilizador utilizador: utilizadores_array){
+           if (utilizador.getStatus()==10 || utilizador.getStatus()==0){
+               utilizadoresaceites.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
+           }
+       }
+       return utilizadoresaceites;
     }
 
     public ProdutosFornecedor getProduto(int id){
@@ -101,7 +108,7 @@ public class SingletonGerirOrcamentos {
             if(fornecedor_instalador.getId_fornecedor() == id_fornecedor){
                 for (Utilizador utilizador : utilizadores_array) {
                     if (utilizador.getId()==fornecedor_instalador.getId_instalador()){
-                        utilizadorestemp.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNif(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
+                        utilizadorestemp.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
                     }
                 }
             }
@@ -156,7 +163,7 @@ public class SingletonGerirOrcamentos {
                         break;
                     }
                     if(!existe){
-                        fornecedorestemp.add(new Utilizador(utilizador.getId(), utilizador.getUsername(), utilizador.getNif(), utilizador.getNome_empresa(), utilizador.getTelemovel(), utilizador.getEmail(), utilizador.getImagem(), utilizador.getCategoria_id(), utilizador.getStatus(), utilizador.getUser_id()));
+                        fornecedorestemp.add(new Utilizador(utilizador.getId(), utilizador.getUsername(), utilizador.getNome_empresa(), utilizador.getTelemovel(), utilizador.getEmail(), utilizador.getImagem(), utilizador.getCategoria_id(), utilizador.getStatus(), utilizador.getUser_id()));
                     }
                 }
                 existe=false;

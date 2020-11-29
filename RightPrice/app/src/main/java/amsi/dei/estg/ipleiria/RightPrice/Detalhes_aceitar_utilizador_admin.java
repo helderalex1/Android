@@ -19,7 +19,6 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapter;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
@@ -33,7 +32,7 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
     private int id_utilizador;
     private Utilizador utilizador;
     private EditText nome, nome_empresa,telefone, email, categoria;
-    private Button aceitar_utilizador,ligar,recusar;
+    private Button aceitar_utilizador,ligar,recusar,banir;
     private ImageView imagem_utilizador;
 
 
@@ -56,6 +55,7 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         aceitar_utilizador= findViewById(R.id.btn_aceitar_utilizador_pendente);
         ligar= findViewById(R.id.Btn_ligar_numero);
         recusar= findViewById(R.id.btn_recusar_utilizador);
+        banir = findViewById(R.id.btnBanirDesbanirAdmin);
 
 
 
@@ -65,10 +65,12 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         }else if (Tipo_abrir==1){
             aceitar_utilizador.setVisibility(View.VISIBLE);
             recusar.setVisibility(View.VISIBLE);
+            banir.setVisibility(View.INVISIBLE);
 
         }else if (Tipo_abrir==2){
             aceitar_utilizador.setVisibility(View.INVISIBLE);
             recusar.setVisibility(View.INVISIBLE);
+            banir.setVisibility(View.VISIBLE);
         }
 
         if (utilizador!=null){
@@ -78,6 +80,11 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
             telefone.setText(""+utilizador.getTelemovel());
             email.setText(utilizador.getEmail());
             categoria.setText(""+utilizador.getCategoria_id());
+            if(utilizador.getStatus()==10){
+                banir.setText(getString(R.string.banir_utilizador));
+            }else if (utilizador.getStatus()==0){
+                banir.setText(getString(R.string.desbanir_utilizador));
+            }
            // imagem_utilizador.setImageResource(utilizador.getImagem());
         }else{
             setTitle(R.string.Sem_utilizador_para_aceitar);
@@ -117,7 +124,7 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         return true;
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (id_utilizador!=0 && Tipo_abrir==2){
             MenuInflater menuInflater = getMenuInflater();
@@ -128,6 +135,6 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         return false;
 
 
-    }
+    }*/
 
 }

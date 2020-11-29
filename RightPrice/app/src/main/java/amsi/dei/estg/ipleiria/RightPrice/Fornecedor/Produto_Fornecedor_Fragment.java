@@ -24,7 +24,6 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaProdutosFornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Utilizadores_aceitar_Adapter;
 import amsi.dei.estg.ipleiria.RightPrice.Detalhes_aceitar_utilizador_admin;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.ProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;

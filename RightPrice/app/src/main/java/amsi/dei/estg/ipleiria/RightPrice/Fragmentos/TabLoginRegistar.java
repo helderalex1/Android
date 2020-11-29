@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -16,11 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ViewPagerAdapter;
+import amsi.dei.estg.ipleiria.RightPrice.FullScreen;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 
-public class TabLoginRegistar extends DialogFragment {
-
+public class TabLoginRegistar extends DialogFragment  {
+    private FullScreen fullScreen;
     private ViewPagerAdapter viewPagerAdapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -48,7 +50,13 @@ public class TabLoginRegistar extends DialogFragment {
         return view;
     }
 
+    public TabLoginRegistar(FullScreen fullScreen) {
+        this.fullScreen = fullScreen;
+    }
 
-
-
+    @Override
+    public void onDestroy() {
+       fullScreen.noneColor();
+        super.onDestroy();
+    }
 }

@@ -1,21 +1,23 @@
 package amsi.dei.estg.ipleiria.RightPrice;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MenuInflater;
+
+import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.TabLoginRegistar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FullScreen {
     ImageButton buton_login_registar;
 
-    private TabLoginRegistar tabLoginRegistar = new TabLoginRegistar();
+    private TabLoginRegistar tabLoginRegistar = new TabLoginRegistar(this);
 
 
 
@@ -30,9 +32,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 tabLoginRegistar.show(getSupportFragmentManager(),"Login/Registo");
+                //noneColor();
             }
+
+
         });
     }
+
+
 
     public void facebookOnClick(View view) {
         try {
@@ -67,8 +74,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public void Fechar_popup(View view) {
         tabLoginRegistar.dismiss();
+        noneColor();
     }
 
 
