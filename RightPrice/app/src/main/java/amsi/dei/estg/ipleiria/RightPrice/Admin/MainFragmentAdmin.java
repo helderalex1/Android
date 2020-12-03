@@ -11,12 +11,12 @@ import android.view.ViewGroup;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 
-public class MainActivity_admin extends Fragment {
+public class MainFragmentAdmin extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_activity_admin, container, false);
+        return inflater.inflate(R.layout.fragment_main_admin, container, false);
     }
 }

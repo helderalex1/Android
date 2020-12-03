@@ -10,9 +10,6 @@
         <item
             android:id="@+id/nav_instalador_cliente"
             android:title="Clientes" />
-            <item
-                android:id="@+id/nav_instalador_obra"
-                android:title="Obras" />
         </menu>
     </item>
     <item android:title="Área de Fornecedor">

@@ -6,7 +6,7 @@
     android:layout_height="300dp"
     android:layout_gravity="center|center_horizontal"
     android:orientation="vertical"
-    tools:context=".Fragmentos.Login">
+    tools:context=".FragmentosAtividades.Login">
 
     <Space
         android:id="@+id/sPInicialLogin"

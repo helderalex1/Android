@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Adaptadores;
+package amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Fornecedor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -44,7 +44,7 @@ public class ListaClientesFornecedorAdapter extends BaseAdapter {
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.item_list_clientes_fornecedor, null);
+            convertView = layoutInflater.inflate(R.layout.item_lista_clientes_do_fornecedor, null);
         }
         ViewHolderLista viewHolderLista = (ViewHolderLista) convertView.getTag();
         if(viewHolderLista == null){

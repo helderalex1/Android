@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Fornecedor;
+package amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Listas;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,17 +25,17 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Fornecedor.ListaProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Atividades.DetalhesProdutoFornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.ProdutosFornecedor;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 import static amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Atividades.DetalhesProdutoFornecedor.DETALHES_PRODUTO;
 
 
-public class Produto_Fornecedor_Fragment extends Fragment {
+public class ListaProdutoFornecedor extends Fragment {
 
 
-    private ArrayList<ProdutosFornecedor> produtosFornecedores;
+    private ArrayList<Produto> produtosFornecedores;
     private ListView lVprodutofornecedor;
     private SearchView searchView;
     private FloatingActionButton fabAddProdutoFornecedor;
@@ -44,16 +44,16 @@ public class Produto_Fornecedor_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_produto_fornecedor_, container, false);
+        View view = inflater.inflate(R.layout.fragment_lista_produto_fornecedor, container, false);
         setHasOptionsMenu(true);
         fabAddProdutoFornecedor = view.findViewById(R.id.fabAddProdutoFornecedor);
-        produtosFornecedores = SingletonGerirOrcamentos.getInstance().getProdutos_fornecedor(1);
+      //  produtosFornecedores = SingletonGerirOrcamentos.getInstance().getProdutos_fornecedor(1);
         lVprodutofornecedor = view.findViewById(R.id.lV_produto_fornecedor);
         lVprodutofornecedor.setAdapter(new ListaProdutosFornecedor(getContext(), produtosFornecedores));
         lVprodutofornecedor.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ProdutosFornecedor produtosFornecedor = (ProdutosFornecedor) parent.getItemAtPosition(position);
+                Produto produtosFornecedor = (Produto) parent.getItemAtPosition(position);
                 Intent intent = new Intent(getContext(), DetalhesProdutoFornecedor.class);
                 intent.putExtra(DETALHES_PRODUTO, produtosFornecedor.getId());
                 startActivityForResult(intent, DetalhesProdutoFornecedor.ACEITAR);
@@ -73,7 +73,7 @@ public class Produto_Fornecedor_Fragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode== Activity.RESULT_OK){
-            produtosFornecedores = SingletonGerirOrcamentos.getInstance().getProdutos_fornecedor_array();
+        //    produtosFornecedores = SingletonGerirOrcamentos.getInstance().getProdutos_fornecedor_array();
             lVprodutofornecedor.setAdapter(new ListaProdutosFornecedor(getContext(),produtosFornecedores));
             switch (requestCode){
                 case DetalhesProdutoFornecedor.ADICIONAR:
@@ -104,12 +104,12 @@ public class Produto_Fornecedor_Fragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                ArrayList<ProdutosFornecedor> produtosFornecedorstemp = new ArrayList<>();
-                for (ProdutosFornecedor produtosFornecedores: SingletonGerirOrcamentos.getInstance().getProdutos_fornecedor(1)) {
-                    if (produtosFornecedores.getNome().toLowerCase().contains(s.toLowerCase())) {
+                ArrayList<Produto> produtosFornecedorstemp = new ArrayList<>();
+              //  for (Produto produtosFornecedores: SingletonGerirOrcamentos.getInstance().getProdutos_fornecedor(1)) {
+                  /*  if (produtosFornecedores.getNome().toLowerCase().contains(s.toLowerCase())) {
                         produtosFornecedorstemp.add(produtosFornecedores);
-                    }
-                }
+                    }*/
+
                 lVprodutofornecedor.setAdapter(new ListaProdutosFornecedor(getContext(),produtosFornecedorstemp));
                 return true;
 

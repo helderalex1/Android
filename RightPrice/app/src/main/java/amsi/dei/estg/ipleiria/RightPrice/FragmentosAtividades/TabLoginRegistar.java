@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Fragmentos;
+package amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades;
 
 import android.os.Bundle;
 
@@ -9,27 +9,29 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ViewPagerAdapter;
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.LoginRegistarAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.FullScreen;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 
 public class TabLoginRegistar extends DialogFragment  {
     private FullScreen fullScreen;
-    private ViewPagerAdapter viewPagerAdapter;
+    private LoginRegistarAdapter viewPagerAdapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private List<Fragment> fragments = new ArrayList<>();
     private List<String> fragmentTitle = new ArrayList<>();
     private Login login;
     private Registar registar;
+    private Spinner spinnerFuncao;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,16 +39,23 @@ public class TabLoginRegistar extends DialogFragment  {
 
         tabLayout = view.findViewById(R.id.tabLayout);
         viewPager = view.findViewById(R.id.viewpageraa);
+        spinnerFuncao= (Spinner) view.findViewById(R.id.spinnerfuncao);
+
+
+
+
 
         registar = new Registar();
         login = new Login();
 
         tabLayout.setupWithViewPager(viewPager);
-        viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(), 0);
+        viewPagerAdapter = new LoginRegistarAdapter(getChildFragmentManager(), 0);
 
         viewPagerAdapter.addFragment(login,getString(R.string.Login));
         viewPagerAdapter.addFragment(registar,getString(R.string.Registar));
         viewPager.setAdapter(viewPagerAdapter);
+        
+
         return view;
     }
 

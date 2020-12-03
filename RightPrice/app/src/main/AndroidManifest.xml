@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RightPrice">
 
-<activity android:name="Detalhes_aceitar_utilizador_admin" android:parentActivityName="Detalhes_aceitar_utilizador_admin" />
-<activity android:name=".Fornecedor.DetalhesProdutoFornecedor" />
-<activity android:name=".Instalador.AdicionarClienteInstalador"/>
+<activity android:name=".FragmentosAtividades.DetalhesUtilizador" android:parentActivityName=".FragmentosAtividades.DetalhesUtilizador" />
+<activity android:name=".Fornecedor.Atividades.DetalhesProdutoFornecedor" />
+<activity android:name=".Instalador.Atividades.AdicionarCliente"/>
         <activity
             android:name=".MenuMainActivity"
             android:screenOrientation="portrait"

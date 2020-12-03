@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Instalador;
+package amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades;
 
 import android.os.Bundle;
 
@@ -8,15 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import amsi.dei.estg.ipleiria.RightPrice.FullScreen;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class AdicionarProdutoOrcamento extends Fragment {
+public class AdicionarProdutoOrcamento extends FullScreen {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adicionar_produto_orcamento, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 }

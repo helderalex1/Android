@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -14,19 +13,19 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_Aceitar_Cliente_admin_Fragment;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.MainActivity_admin;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas.Lista_utilizadores_admin;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.MainActivity_fornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Produto_Fornecedor_Fragment;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Vistas_Listas.Lista_Clientes_Fornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.PerfilUtilizador;
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.Clientes_Instalador;
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.List_Conhecer_Fornecedor_Fragment;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.Listas.ListaAceitarUtilizadoresAdmin;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.MainFragmentAdmin;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.Listas.ListaUtilizadoresAdmin;
+import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.MainFragmentFornecedor;
+import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Listas.ListaProdutoFornecedor;
+import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Listas.ListaClientesDoFornecedor;
+import amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.PerfilUtilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Instalador.Listas.ListaClientesInstalador;
+import amsi.dei.estg.ipleiria.RightPrice.Instalador.Listas.ListaConhecerFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.MainFragmentInstalador;
 
 
-public class MenuMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MenuMainActivity extends FullScreen implements NavigationView.OnNavigationItemSelectedListener{
 
     private NavigationView navigationView;
     private DrawerLayout drawer;
@@ -73,70 +72,63 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         Fragment fragment = null;
         switch (menuItem .getItemId()) {
+            //Funçoes que abrem as diversas funções do Instalador
             case R.id.nav_instalador_estatistica:
                 fragment = new MainFragmentInstalador();
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_instalador_cliente:
-                fragment = new Clientes_Instalador();
+                fragment = new ListaClientesInstalador();
                 setTitle(menuItem.getTitle());
                 break;
 
             case R.id.nav_instalador_adicionar_fornecedor:
-                fragment = new List_Conhecer_Fornecedor_Fragment();
-                setTitle(menuItem.getTitle());
-                break;
-           /* case R.id.nav_instalador_fornecedor:
-                fragment = new List_Conhecer_Fornecedor_Fragment();
-                setTitle(menuItem.getTitle());
-                break;
-            case R.id.nav_instalador_obra:
-                fragment = new Obras_Fragment();
+                fragment = new ListaConhecerFornecedor();
                 setTitle(menuItem.getTitle());
                 break;
 
 
+            //Funções que abrem as diversas opções de menu do Fornecedor
             case R.id.nav_fornecedor_estatistica:
-                fragment = new MainActivity_fornecedor();
-                setTitle(menuItem.getTitle());
-                break;
-            case R.id.nav_fornecedor_instalador:
-                fragment = new Lista_Clientes_Fornecedor();
+                fragment = new MainFragmentFornecedor();
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_fornecedor_produto:
-                fragment = new Produto_Fornecedor_Fragment();
+                fragment = new ListaProdutoFornecedor();
+                setTitle(menuItem.getTitle());
+                break;
+            case R.id.nav_fornecedor_instalador:
+                fragment = new ListaClientesDoFornecedor();
                 setTitle(menuItem.getTitle());
                 break;
 
-*/
+
+          //Funções que abrem as diversas opçoes de menu do Administrador
             case R.id.nav_administrador_estatistica:
-                fragment = new MainActivity_admin();
+                fragment = new MainFragmentAdmin();
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_administrador_clientes:
-                fragment = new Lista_utilizadores_admin();
+                fragment = new ListaUtilizadoresAdmin();
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_administrador_cliente_pendente:
-                fragment = new Lista_Aceitar_Cliente_admin_Fragment();
+                fragment = new ListaAceitarUtilizadoresAdmin();
                 setTitle(menuItem.getTitle());
                 break;
-
-            case R.id.nav_sair:
-                finish();
-                break;
-
+           //Funçoes comuns em todos os menus
             case R.id.nav_conta:
                 fragment = new PerfilUtilizador();
                 setTitle(menuItem.getTitle());
+                break;
+            case R.id.nav_sair:
+                finish();
                 break;
         }
         if(fragment != null){
             fragmentManager.beginTransaction().replace(R.id.framelayout2,fragment).commit();
         }
             drawer.closeDrawer(GravityCompat.START);
-
         return true;
     }
 }

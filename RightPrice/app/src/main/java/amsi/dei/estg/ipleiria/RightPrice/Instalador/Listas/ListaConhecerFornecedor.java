@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Instalador;
+package amsi.dei.estg.ipleiria.RightPrice.Instalador.Listas;
 
 import android.os.Bundle;
 
@@ -16,10 +16,10 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Instalador.ListaFornecedores;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class List_Conhecer_Fornecedor_Fragment extends Fragment {
+public class ListaConhecerFornecedor extends Fragment {
 
     private ArrayList<Utilizador> fornecedorInstaladores;
     private FloatingActionButton floatingActionButton;
@@ -29,8 +29,8 @@ public class List_Conhecer_Fornecedor_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_list_conhecer_fornecedor, container, false);
-        fornecedorInstaladores = SingletonGerirOrcamentos.getInstance().getFornecedores(1);
+        View view = inflater.inflate(R.layout.fragment_lista_conhecer_fornecedor_instalador, container, false);
+     //   fornecedorInstaladores = SingletonGerirOrcamentos.getInstance().getFornecedores(1);
         lVFornecedoresInstaladores = view.findViewById(R.id.lvListaClienteconhecerFornecedor);
         lVFornecedoresInstaladores.setAdapter(new ListaFornecedores(getContext(),fornecedorInstaladores));
        /* lVListaClientesInstalador.setOnItemClickListener(new AdapterView.OnItemClickListener() {

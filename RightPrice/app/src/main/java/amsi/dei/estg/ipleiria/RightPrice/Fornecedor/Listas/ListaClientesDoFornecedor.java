@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Vistas_Listas;
+package amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Listas;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,11 +23,11 @@ import java.util.ArrayList;
 import amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Admin.UtilizadoresAceitarAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 import static amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador.DETALHES_UTILIZADOR;
 
-public class Lista_Clientes_Fornecedor extends Fragment {
+public class ListaClientesDoFornecedor extends Fragment {
 
     private ListView lvListaClienteconhecerFornecedor;
     private ArrayList<Utilizador> utilizador;
@@ -37,9 +37,9 @@ public class Lista_Clientes_Fornecedor extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_clientes_fornecedor, container, false);
+        View view = inflater.inflate(R.layout.fragment_lista_clientes_fornecedor, container, false);
         setHasOptionsMenu(true);
-        utilizador = SingletonGerirOrcamentos.getInstance().getInstaladorFornecedor(1);
+   //     utilizador = SingletonGerirOrcamentos.getInstance().getInstaladorFornecedor(1);
         lvListaClienteconhecerFornecedor = view.findViewById(R.id.lvListaClienteconhecerFornecedor);
         lvListaClienteconhecerFornecedor.setAdapter(new UtilizadoresAceitarAdapter(getContext(),utilizador));
 
@@ -80,11 +80,11 @@ public class Lista_Clientes_Fornecedor extends Fragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 ArrayList<Utilizador> temp_utilizador = new ArrayList<>();
-                for (Utilizador utilizador: SingletonGerirOrcamentos.getInstance().getInstaladorFornecedor(1)) {
+          /*      for (Utilizador utilizador: SingletonGerirOrcamentos.getInstance().getInstaladorFornecedor(1)) {
                     if (utilizador.getUsername().toLowerCase().contains(s.toLowerCase())) {
                         temp_utilizador.add(utilizador);
                     }
-                }
+                }*/
                 lvListaClienteconhecerFornecedor.setAdapter(new UtilizadoresAceitarAdapter(getContext(),temp_utilizador));
                 return true;
 

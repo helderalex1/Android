@@ -12,7 +12,7 @@ import amsi.dei.estg.ipleiria.RightPrice.FullScreen;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 
-public class AdicionarImagemOrçamentoInstalador extends FullScreen {
+public class AdicionarImagemOrçamento extends FullScreen {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

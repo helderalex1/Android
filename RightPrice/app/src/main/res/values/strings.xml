@@ -40,4 +40,9 @@
     <string name="ligar_com_dois_pontos">Ligar:</string>
     <string name="banir_utilizador">Banir Utilizador</string>
     <string name="desbanir_utilizador">Desbanir Utilizador</string>
+
+    <string-array name="funcao">
+        <item>Instalador</item>
+        <item>Fornecedor</item>
+    </string-array>
 </resources>

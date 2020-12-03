@@ -1,21 +1,21 @@
 package amsi.dei.estg.ipleiria.RightPrice;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-import amsi.dei.estg.ipleiria.RightPrice.Fragmentos.TabLoginRegistar;
+import amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.TabLoginRegistar;
 
-public class MainActivity extends FullScreen {
+public class MainActivity extends FullScreen{
     ImageButton buton_login_registar;
+
 
     private TabLoginRegistar tabLoginRegistar = new TabLoginRegistar(this);
 
@@ -32,7 +32,7 @@ public class MainActivity extends FullScreen {
             @Override
             public void onClick(View view) {
                 tabLoginRegistar.show(getSupportFragmentManager(),"Login/Registo");
-                //noneColor();
+
             }
 
 

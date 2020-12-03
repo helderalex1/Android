@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice;
+package amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,23 +7,17 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.SearchView;
-
-import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
+public class DetalhesUtilizador extends AppCompatActivity {
     public static final String DETALHES_UTILIZADOR ="utilizador";
     public static final String Tipo_abrir_atividade = "tipo";
     public static final int ACEITAR = 2;
@@ -42,10 +36,10 @@ public class Detalhes_aceitar_utilizador_admin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setTitleColor(R.color.black);
-        setContentView(R.layout.activity_detalhes_aceitar_utilizador);
+        setContentView(R.layout.activity_detalhes_utilizador);
         id_utilizador = getIntent().getIntExtra(DETALHES_UTILIZADOR, 0);
         Tipo_abrir = getIntent().getIntExtra(Tipo_abrir_atividade,0);
-        utilizador = SingletonGerirOrcamentos.getInstance().getUtilizador(id_utilizador);
+        utilizador = SingletonGerirOrcamentos.getInstance(getBaseContext()).getUtilizador(id_utilizador);
         nome = findViewById(R.id.Nome_utilizador_pendente_detalhes);
         nome_empresa = findViewById(R.id.nome_empresa_utilizador_pendente);
         telefone = findViewById(R.id.telefone_utilizador_pendente);

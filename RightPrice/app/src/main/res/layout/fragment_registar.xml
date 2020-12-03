@@ -5,7 +5,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:orientation="vertical"
-        tools:context=".Fragmentos.Registar">
+        tools:context=".FragmentosAtividades.Registar">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -138,7 +138,7 @@
                 android:text="Função:" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/spinnerfuncao"
                 android:layout_width="209dp"
                 android:layout_height="wrap_content" />
 

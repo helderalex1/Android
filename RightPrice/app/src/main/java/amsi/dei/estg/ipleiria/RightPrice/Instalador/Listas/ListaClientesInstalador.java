@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Instalador;
+package amsi.dei.estg.ipleiria.RightPrice.Instalador.Listas;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,33 +25,33 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Instalador.ListaClientesInstaladorAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Atividades.DetalhesProdutoFornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades.AdicionarClienteInstalador;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.ClientesInstalador;
+import amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades.AdicionarCliente;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Cliente;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-import static amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades.AdicionarClienteInstalador.DETALHES_CLIENTE_INSTALADOR;
+import static amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades.AdicionarCliente.DETALHES_CLIENTE_INSTALADOR;
 
-public class Clientes_Instalador extends Fragment {
+public class ListaClientesInstalador extends Fragment {
     private ListView lVListaClientesInstalador;
-    private ArrayList<ClientesInstalador> clientesInstaladores;
-    private ArrayList<ClientesInstalador> fornecedores;
+    private ArrayList<Cliente> clientesInstaladores;
+    private ArrayList<Cliente> fornecedores;
     private FloatingActionButton floatingActionButton;
     private SearchView searchView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_clientes_instalador, container, false);
+        View view = inflater.inflate(R.layout.fragment_lista_clientes_instalador, container, false);
         setHasOptionsMenu(true);
-        clientesInstaladores = SingletonGerirOrcamentos.getInstance().getClientesInstalador(1);
+        //clientesInstaladores = SingletonGerirOrcamentos.getInstance(getContext()).getClientesInstalador(1);
         lVListaClientesInstalador = view.findViewById(R.id.lvListaClientesinstalador);
         floatingActionButton = view.findViewById(R.id.fabaddClienteInstalador);
         lVListaClientesInstalador.setAdapter(new ListaClientesInstaladorAdapter(getContext(),clientesInstaladores));
         lVListaClientesInstalador.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ClientesInstalador clientesInstalador = (ClientesInstalador) parent.getItemAtPosition(position);
-                Intent intent = new Intent(getContext(), AdicionarClienteInstalador.class);
+                Cliente clientesInstalador = (Cliente) parent.getItemAtPosition(position);
+                Intent intent = new Intent(getContext(), AdicionarCliente.class);
                 intent.putExtra(DETALHES_CLIENTE_INSTALADOR, clientesInstalador.getId());
                 startActivityForResult(intent, DetalhesProdutoFornecedor.ACEITAR);
             }
@@ -60,8 +60,8 @@ public class Clientes_Instalador extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), AdicionarClienteInstalador.class);
-                startActivityForResult(intent, AdicionarClienteInstalador.EDITAR);
+                Intent intent = new Intent(getContext(), AdicionarCliente.class);
+                startActivityForResult(intent, AdicionarCliente.EDITAR);
             }
         });
         return view;
@@ -70,7 +70,7 @@ public class Clientes_Instalador extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode== Activity.RESULT_OK){
-            clientesInstaladores = SingletonGerirOrcamentos.getInstance().getClientesInstaladores();
+           // clientesInstaladores = SingletonGerirOrcamentos.getInstance().getClientesInstaladores();
             lVListaClientesInstalador.setAdapter(new ListaClientesInstaladorAdapter(getContext(),clientesInstaladores));
             switch (requestCode){
                 case DetalhesProdutoFornecedor.ADICIONAR:
@@ -100,12 +100,12 @@ public class Clientes_Instalador extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                ArrayList<ClientesInstalador> clientesInstaladorestemp = new ArrayList<>();
-                for (ClientesInstalador clientesInstalador: SingletonGerirOrcamentos.getInstance().getClientesInstalador(1)) {
+                ArrayList<Cliente> clientesInstaladorestemp = new ArrayList<>();
+               /* for (Cliente clientesInstalador: Singl) {
                     if (clientesInstalador.getNome().toLowerCase().contains(s.toLowerCase())) {
                         clientesInstaladorestemp.add(clientesInstalador);
                     }
-                }
+                }*/
                 lVListaClientesInstalador.setAdapter(new ListaClientesInstaladorAdapter(getContext(),clientesInstaladorestemp));
                 return true;
 

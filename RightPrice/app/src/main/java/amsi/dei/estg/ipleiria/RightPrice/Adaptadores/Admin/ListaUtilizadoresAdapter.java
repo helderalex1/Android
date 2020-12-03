@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Adaptadores;
+package amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Admin;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class ListaUtilizadoresAdapter extends BaseAdapter {
@@ -42,7 +42,7 @@ public class ListaUtilizadoresAdapter extends BaseAdapter {
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.item_lista_utilizadores, null);
+            convertView = layoutInflater.inflate(R.layout.item_lista_utilizadores_admin, null);
         }
         ListaUtilizadoresAdapter.ViewHolderLista viewHolderLista = (ListaUtilizadoresAdapter.ViewHolderLista) convertView.getTag();
         if(viewHolderLista == null){

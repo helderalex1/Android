@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas;
+package amsi.dei.estg.ipleiria.RightPrice.Admin.Listas;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -20,17 +20,17 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.ListaUtilizadoresAdapter;
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Admin.ListaUtilizadoresAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 import static amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador.DETALHES_UTILIZADOR;
 import static amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador.Tipo_abrir_atividade;
 
 
-public class Lista_utilizadores_admin extends Fragment {
+public class ListaUtilizadoresAdmin extends Fragment {
     private ListView lVListautilizadores;
     private ArrayList<Utilizador> utilizadores;
     private SearchView searchView;
@@ -41,7 +41,7 @@ public class Lista_utilizadores_admin extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_lista_utilizadores_admin, container, false);
         setHasOptionsMenu(true);
-        utilizadores = SingletonGerirOrcamentos.getInstance().getUtilizadores_array();
+        utilizadores = SingletonGerirOrcamentos.getInstance(getContext()).getUtilizadoresAceites();
         lVListautilizadores = view.findViewById(R.id.lvUtilizadoresAdmin);
         lVListautilizadores.setAdapter(new ListaUtilizadoresAdapter(getContext(), utilizadores));
 
@@ -90,7 +90,7 @@ public class Lista_utilizadores_admin extends Fragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 ArrayList<Utilizador> temp_utilizador = new ArrayList<>();
-                for (Utilizador utilizador : SingletonGerirOrcamentos.getInstance().getUtilizadores_array()) {
+                for (Utilizador utilizador : SingletonGerirOrcamentos.getInstance(getContext()).getUtilizadoresAceites()) {
                     if (utilizador.getUsername().toLowerCase().contains(s.toLowerCase())) {
                         temp_utilizador.add(utilizador);
                     }

@@ -45,7 +45,6 @@ public abstract class FullScreen extends AppCompatActivity {
 
     public void noneColor() {
         Window w = getWindow();
-       // w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
             getWindow().getDecorView().setSystemUiVisibility(
                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                    |View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -56,9 +55,3 @@ public abstract class FullScreen extends AppCompatActivity {
 
     }
 }
-
-
-
-/*|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN*/
-/*  | View.SYSTEM_UI_FLAG_FULLSCREEN*/
-

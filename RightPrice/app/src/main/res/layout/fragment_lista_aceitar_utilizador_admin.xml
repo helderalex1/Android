@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.Vistas_Listas.Lista_Aceitar_Utilizadores_admin">
+    tools:context=".Admin.Listas.Lista_Aceitar_Utilizadores_admin">
 
     <ListView
         android:id="@+id/lvUtilizadoresPendentes"

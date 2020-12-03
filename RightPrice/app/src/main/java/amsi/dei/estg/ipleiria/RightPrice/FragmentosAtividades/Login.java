@@ -1,6 +1,5 @@
-package amsi.dei.estg.ipleiria.RightPrice.Fragmentos;
+package amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import amsi.dei.estg.ipleiria.RightPrice.MenuMainActivity;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 

@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Adaptadores;
+package amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Instalador;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.ClientesInstalador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Cliente;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class ListaClientesInstaladorAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
-    private ArrayList<ClientesInstalador> clientesInstaladores;
-    public ListaClientesInstaladorAdapter(Context context, ArrayList<ClientesInstalador> clientesInstaladores){
+   private ArrayList<Cliente> clientesInstaladores;
+    public ListaClientesInstaladorAdapter(Context context, ArrayList<Cliente> clientesInstaladores){
         this.context = context;
         this.clientesInstaladores = clientesInstaladores;
     }
@@ -41,14 +41,14 @@ public class ListaClientesInstaladorAdapter extends BaseAdapter {
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.item_list_clientes_instalador, null);
+            convertView = layoutInflater.inflate(R.layout.item_lista_clientes_instalador, null);
         }
         ViewHolderLista viewHolderLista = (ViewHolderLista) convertView.getTag();
         if(viewHolderLista == null){
             viewHolderLista = new ViewHolderLista(convertView);
             convertView.setTag(viewHolderLista);
         }
-        viewHolderLista.update(clientesInstaladores.get(position));
+      //  viewHolderLista.update(clientesInstaladores.get(position));
         return convertView;
     }
 
@@ -60,11 +60,11 @@ public class ListaClientesInstaladorAdapter extends BaseAdapter {
             nif = convertView.findViewById(R.id.tVNifClienteInstalador);
             email = convertView.findViewById(R.id.tVEmailClienteInstalador);
         }
-        public void update(ClientesInstalador clientesInstalador){
+    /*    public void update(ClientesInstalador clientesInstalador){
             nome.setText(clientesInstalador.getNome());
             telemovel.setText(""+clientesInstalador.getTelefone());
             nif.setText(""+clientesInstalador.getNif());
             email.setText(clientesInstalador.getEmail());
-        }
+        }*/
     }
 }

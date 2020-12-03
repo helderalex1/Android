@@ -3,21 +3,15 @@ package amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 
 import amsi.dei.estg.ipleiria.RightPrice.FullScreen;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.ClientesInstalador;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
-public class AdicionarClienteInstalador extends FullScreen {
+public class AdicionarCliente extends FullScreen {
     public static final String DETALHES_CLIENTE_INSTALADOR ="cliente";
     public static final int ADICIONAR = 1;
     public static final int ACEITAR = 2;
@@ -27,15 +21,15 @@ public class AdicionarClienteInstalador extends FullScreen {
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.fragment_adicionar__cliente__instalador_);
+        setContentView(R.layout.activity_editar_cliente_instalador);
         EditText nome = findViewById(R.id.edtNomeClienteInstalador);
         EditText telefone = findViewById(R.id.edtTelClienteInstalador);
         EditText email = findViewById(R.id.edtEmailClienteInstalador);
         EditText nif = findViewById(R.id.edtNifClienteInstalador);
 
         user_id = getIntent().getIntExtra(DETALHES_CLIENTE_INSTALADOR,0);
-        ClientesInstalador clientesInstalador = SingletonGerirOrcamentos.getInstance().getClienteInstalador(user_id);
-        if (clientesInstalador !=null){
+     //   ClientesInstalador clientesInstalador = SingletonGerirOrcamentos.getInstance().getClienteInstalador(user_id);
+        /*if (clientesInstalador !=null){
             setTitle(getString(R.string.detalhes_utilizador_com_dois_pontos)+ clientesInstalador.getNome());
             nome.setText(clientesInstalador.getNome());
             telefone.setText(String.valueOf(clientesInstalador.getTelefone()));
@@ -43,7 +37,7 @@ public class AdicionarClienteInstalador extends FullScreen {
             nif.setText(String.valueOf(clientesInstalador.getNif()));
         }else{
             setTitle("Adicionar produto");
-        }
+        }*/
     }
 
     @Override

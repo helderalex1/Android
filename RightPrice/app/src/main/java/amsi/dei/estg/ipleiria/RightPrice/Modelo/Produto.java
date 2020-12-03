@@ -1,67 +1,77 @@
 package amsi.dei.estg.ipleiria.RightPrice.Modelo;
 
-public class ProdutosFornecedor {
-    int id;
-    String Nome;
-    int Referência;
-    String Descrição;
-    int preço;
-    int fornecedor_id;
+public class Produto {
+   private int id;
+   private int id_fornecedor;
+   private String imagem;
+   private String nome;
+   private String referencia;
+   private String descrição;
+   private int preco;
+
+   //Construtor
+
+
+    public Produto(int id, int id_fornecedor, String imagem, String nome, String referencia, String descrição, int preco) {
+        this.id = id;
+        this.id_fornecedor = id_fornecedor;
+        this.imagem = imagem;
+        this.nome = nome;
+        this.referencia = referencia;
+        this.descrição = descrição;
+        this.preco = preco;
+    }
+
+    //Funções GET
+
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId_fornecedor() {
+        return id_fornecedor;
+    }
+
+    public String getImagem() {
+        return imagem;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
-    public void setNome(String nome) {
-        Nome = nome;
-    }
-
-    public int getReferência() {
-        return Referência;
-    }
-
-    public void setReferência(int referência) {
-        Referência = referência;
+    public String getReferencia() {
+        return referencia;
     }
 
     public String getDescrição() {
-        return Descrição;
+        return descrição;
+    }
+
+    public int getPreco() {
+        return preco;
+    }
+
+    //Funções SET
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
     }
 
     public void setDescrição(String descrição) {
-        Descrição = descrição;
+        this.descrição = descrição;
     }
 
-    public int getPreço() {
-        return preço;
-    }
-
-    public void setPreço(int preço) {
-        this.preço = preço;
-    }
-
-    public int getFornecedor_id() {
-        return fornecedor_id;
-    }
-
-    public void setFornecedor_id(int fornecedor_id) {
-        this.fornecedor_id = fornecedor_id;
-    }
-
-    public ProdutosFornecedor(int id, String nome, int referência, String descrição, int preço, int fornecedor_id) {
-        this.id = id;
-        Nome = nome;
-        Referência = referência;
-        Descrição = descrição;
-        this.preço = preço;
-        this.fornecedor_id = fornecedor_id;
+    public void setPreco(int preco) {
+        this.preco = preco;
     }
 }

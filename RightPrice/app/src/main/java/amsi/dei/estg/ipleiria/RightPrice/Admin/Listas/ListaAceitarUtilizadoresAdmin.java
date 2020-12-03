@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Admin.Vistas_Listas;
+package amsi.dei.estg.ipleiria.RightPrice.Admin.Listas;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -20,15 +20,15 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.UtilizadoresAceitarAdapter;
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Admin.UtilizadoresAceitarAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 import static amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador.DETALHES_UTILIZADOR;
 import static amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.DetalhesUtilizador.Tipo_abrir_atividade;
 
-public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
+public class ListaAceitarUtilizadoresAdmin extends Fragment {
     private ListView lVListautilizadorespendentes;
     private ArrayList<Utilizador> utilizadors;
     private SearchView searchView;
@@ -38,7 +38,7 @@ public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_aceitar_utilizador_admin, container, false);
         setHasOptionsMenu(true);
-        utilizadors =SingletonGerirOrcamentos.getInstance().getUtilizadores_pendentes_array();
+        utilizadors =SingletonGerirOrcamentos.getInstance(getContext()).getUtilizadorstatus9();
         lVListautilizadorespendentes= view.findViewById(R.id.lvUtilizadoresPendentes);
         lVListautilizadorespendentes.setAdapter(new UtilizadoresAceitarAdapter(getContext(), utilizadors));
         // Inflate the layout for this fragment
@@ -85,7 +85,7 @@ public class Lista_Aceitar_Cliente_admin_Fragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 ArrayList<Utilizador> temp_utilizador = new ArrayList<>();
-                for (Utilizador utilizador: SingletonGerirOrcamentos.getInstance().getUtilizadores_pendentes_array()) {
+                for (Utilizador utilizador: SingletonGerirOrcamentos.getInstance(getContext()).getUtilizadorstatus9()) {
                     if (utilizador.getUsername().toLowerCase().contains(s.toLowerCase())) {
                         temp_utilizador.add(utilizador);
                     }

@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Fragmentos;
+package amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades;
 
 import android.os.Bundle;
 

@@ -1,56 +1,143 @@
 package amsi.dei.estg.ipleiria.RightPrice.Modelo;
 
+import android.content.Context;
+
 import java.util.ArrayList;
+
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.UtilizadorBDHelper;
 
 public class SingletonGerirOrcamentos {
 
-    private ArrayList<ClientesInstalador> clientesInstaladores;
-    private ArrayList<Utilizador> utilizadores_array;
-    private ArrayList<FornecedorInstalador> fornecedor_instaladores;
-    private ArrayList<ProdutosFornecedor> produtos_fornecedor;
     private static SingletonGerirOrcamentos instance = null;
 
+    //declaração da Base de dados de cada array
+    private static UtilizadorBDHelper utilizadorBDHelper = null;
 
-    public static synchronized SingletonGerirOrcamentos getInstance() {
+    //array a utilizar com os valores da base de dados
+    private ArrayList<Utilizador> utilizadores_array;
+
+
+
+    private ArrayList<Cliente> clientesInstaladores;
+    private ArrayList<FornecedorInstalador> fornecedor_instaladores;
+    private ArrayList<Produto> produtos_fornecedor;
+
+
+
+    public static synchronized SingletonGerirOrcamentos getInstance(Context context) {
         if (instance == null) {
-            instance = new SingletonGerirOrcamentos();
+            instance = new SingletonGerirOrcamentos(context);
         }
         return instance;
     }
 
-    private SingletonGerirOrcamentos() {
-        gerarFakeData();
+    private SingletonGerirOrcamentos(Context context) {
+       utilizadores_array = new ArrayList<Utilizador>();
+       utilizadorBDHelper = new UtilizadorBDHelper(context);
+       getUtilizadoresDB();
+
+        //gerarFakeData();
     }
 
+
+    //funçoes para os Utilizadores
+    public ArrayList<Utilizador> getUtilizadoresDB(){
+        utilizadores_array = utilizadorBDHelper.getAllUserDB();
+        return new ArrayList<>(utilizadores_array);
+    }
+
+    public Utilizador getUtilizador(int id_utilizador){
+        for (Utilizador utilizador : utilizadores_array){
+            if (utilizador.getId()==id_utilizador){
+                return utilizador;
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Utilizador> getUtilizadorstatus9 (){
+        ArrayList<Utilizador> utilizadorespendentes;
+        utilizadorespendentes = new ArrayList<Utilizador>();
+        for (Utilizador utilizador: utilizadores_array) {
+            if (utilizador.getStatus()==9){
+                utilizadorespendentes.add(new Utilizador(utilizador.getUsername(),utilizador.getNome(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus()));
+            }
+        }
+        return utilizadorespendentes;
+    }
+
+    public ArrayList<Utilizador> getUtilizadoresAceites(){
+        ArrayList<Utilizador> utilizadoresaceites;
+        utilizadoresaceites = new ArrayList<Utilizador>();
+        for (Utilizador utilizador: utilizadores_array){
+            if (utilizador.getStatus()==10 || utilizador.getStatus()==0){
+                utilizadoresaceites.add(new Utilizador(utilizador.getUsername(),utilizador.getNome(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus()));
+            }
+        }
+        return utilizadoresaceites;
+    }
+
+
+
+    public void adicionarUtilizadorDB(Utilizador utilizador){
+        Utilizador auxutilizador = utilizadorBDHelper.adicionarUserDB(utilizador);
+        if(auxutilizador!=null){
+            utilizadores_array.add(utilizador);
+        }
+    }
+
+    public void removerUtilizadorDB(int id){
+        Utilizador u = getUtilizador(id);
+        if(u != null){
+            if (utilizadorBDHelper.removerUserDB(u.getId())){
+                utilizadores_array.remove(u);
+                System.out.println("--> Livro removido com sucesso da DB");
+            }
+        }
+    }
+
+    public void editarUtilizadorDB(Utilizador utilizador){
+        if (!utilizadores_array.contains(utilizador)){
+            return;
+        }
+        Utilizador u = getUtilizador(utilizador.getId());
+        u.setUsername(utilizador.getUsername());
+        u.setNome(utilizador.getNome());
+        u.setNome_empresa(utilizador.getNome_empresa());
+        u.setEmail(utilizador.getEmail());
+        u.setImagem(utilizador.getImagem());
+        u.setStatus(utilizador.getStatus());
+        u.setTelemovel(utilizador.getTelemovel());
+    }
+
+
+
+
     private void gerarFakeData() {
-        clientesInstaladores = new ArrayList<ClientesInstalador>();
-        clientesInstaladores.add(new ClientesInstalador(1, 1, "A", 12345, 2020, "aa@a"));
-        clientesInstaladores.add(new ClientesInstalador(2,2, "B", 54321, 2020, "bb@b"));
-        clientesInstaladores.add(new ClientesInstalador(3,2, "C", 54321, 2020, "bb@b"));
-        utilizadores_array=new ArrayList<Utilizador>();
-        utilizadores_array.add(new Utilizador(1, "Manuel","Continente", 919564869, "a@a.pt", 0, 1, 0,1));
-        utilizadores_array.add(new Utilizador(2, "Rui12", "Captemp", 919705797, "a@ab.pt", 0, 1, 9,2));
-        utilizadores_array.add(new Utilizador(3, "Rui122", "Captemp", 919705797, "a@ab.pt", 0, 1, 10,2));
-        utilizadores_array.add(new Utilizador(4, "Ruhrthrr323i122", "Captemp", 919705797, "a@ab.pt", 0, 1, 10,2));
-        utilizadores_array.add(new Utilizador(5, "Rufsdfshrghi122", "Captemp", 919705797, "a@ab.pt", 0, 1, 10,2));
+        clientesInstaladores = new ArrayList<Cliente>();
+        clientesInstaladores.add(new Cliente(1, 1, "A", 12345, 2020, "aa@a"));
+        clientesInstaladores.add(new Cliente(2,2, "B", 54321, 2020, "bb@b"));
+        clientesInstaladores.add(new Cliente(3,2, "C", 54321, 2020, "bb@b"));
+
         fornecedor_instaladores = new ArrayList<FornecedorInstalador>();
         fornecedor_instaladores.add(new FornecedorInstalador(1,2));
         fornecedor_instaladores.add(new FornecedorInstalador(1,3));
-        produtos_fornecedor = new ArrayList<ProdutosFornecedor>();
-        produtos_fornecedor.add(new ProdutosFornecedor(1,"asASd",12,"sa",10,1));
-        produtos_fornecedor.add(new ProdutosFornecedor(2,"bcs",12,"s2a",13,1));
+        produtos_fornecedor = new ArrayList<Produto>();
+        produtos_fornecedor.add(new Produto(1,2,"","sa","10","1",1));
+        produtos_fornecedor.add(new Produto(2,2,"","s2a","13","1",1));
     }
 
     public ArrayList<FornecedorInstalador> getFornecedoress() {
         return new ArrayList<>(fornecedor_instaladores);
     }
 
-    public ArrayList<ClientesInstalador> getClientesInstaladores() {
+    public ArrayList<Cliente> getClientesInstaladores() {
         return new ArrayList<>(clientesInstaladores);
     }
 
-    public ClientesInstalador getClienteInstalador(int id) {
-        for (ClientesInstalador clienteInstalador : clientesInstaladores) {
+    public Cliente getClienteInstalador(int id) {
+        for (Cliente clienteInstalador : clientesInstaladores) {
             if (clienteInstalador.getId() == id) {
                 return clienteInstalador;
             }
@@ -58,38 +145,15 @@ public class SingletonGerirOrcamentos {
         return null;
     }
 
-    public ArrayList<Utilizador> getUtilizadores_pendentes_array() {
-        ArrayList<Utilizador> utilizadorespendentes;
-        utilizadorespendentes = new ArrayList<Utilizador>();
-        for (Utilizador utilizador: utilizadores_array) {
-            if (utilizador.getStatus()==9){
-                utilizadorespendentes.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
-            }
-        }
-        return utilizadorespendentes;
-    }
 
-    public Utilizador getUtilizador(int id) {
-        for (Utilizador utilizador : utilizadores_array) {
-            if (utilizador.getId() == id) {
-                return utilizador;
-            }
-        }
-        return null;
-    }
-    public ArrayList<Utilizador> getUtilizadores_array(){
-       ArrayList<Utilizador> utilizadoresaceites;
-       utilizadoresaceites = new ArrayList<Utilizador>();
-       for (Utilizador utilizador: utilizadores_array){
-           if (utilizador.getStatus()==10 || utilizador.getStatus()==0){
-               utilizadoresaceites.add(new Utilizador(utilizador.getId(),utilizador.getUsername(),utilizador.getNome_empresa(),utilizador.getTelemovel(),utilizador.getEmail(),utilizador.getImagem(),utilizador.getCategoria_id(),utilizador.getStatus(),utilizador.getUser_id()));
-           }
-       }
-       return utilizadoresaceites;
-    }
 
-    public ProdutosFornecedor getProduto(int id){
-        for(ProdutosFornecedor produtosFornecedor :produtos_fornecedor){
+
+
+  /*
+
+
+    public Produto getProduto(int id){
+        for(Produto produtosFornecedor :produtos_fornecedor){
             if(produtosFornecedor.getId() == id){
                 return produtosFornecedor;
             }
@@ -97,7 +161,7 @@ public class SingletonGerirOrcamentos {
         return null;
     }
 
-    public ArrayList<ProdutosFornecedor> getProdutos_fornecedor_array() {
+    public ArrayList<Produto> getProdutos_fornecedor_array() {
         return new ArrayList<>(produtos_fornecedor);
     }
 
@@ -116,14 +180,14 @@ public class SingletonGerirOrcamentos {
         return utilizadorestemp;
     }
 
-    public ArrayList<ClientesInstalador> getClientesInstalador(int id_user){
-        ArrayList<ClientesInstalador> clientesInstaladorestemp;
-        clientesInstaladorestemp = new ArrayList<ClientesInstalador>();
-       for (ClientesInstalador clientesInstalador:clientesInstaladores) {
+    public ArrayList<Cliente> getClientesInstalador(int id_user){
+        ArrayList<Cliente> clientesInstaladorestemp;
+        clientesInstaladorestemp = new ArrayList<Cliente>();
+       for (Cliente clientesInstalador:clientesInstaladores) {
            if (clientesInstalador.getUser_id() == id_user) {
                for (Utilizador utilizador : utilizadores_array) {
-                   if (utilizador.getUser_id() == clientesInstalador.getUser_id()) {
-                       clientesInstaladorestemp.add(new ClientesInstalador(clientesInstalador.getId(), clientesInstalador.getUser_id(), clientesInstalador.getNome(), clientesInstalador.getTelefone(), clientesInstalador.getNif(), clientesInstalador.getEmail()));
+                   if (utilizador.getId() == clientesInstalador.getUser_id()) {
+                       clientesInstaladorestemp.add(new Cliente(clientesInstalador.getId(), clientesInstalador.getUser_id(), clientesInstalador.getNome(), clientesInstalador.getTelemovel(), clientesInstalador.getNif(), clientesInstalador.getEmail()));
                    }
                }
            }
@@ -131,12 +195,12 @@ public class SingletonGerirOrcamentos {
         return clientesInstaladorestemp;
     }
 
-    public ArrayList<ProdutosFornecedor> getProdutos_fornecedor (int id_fornecedor){
-        ArrayList<ProdutosFornecedor> produtosFornecedortemp;
-        produtosFornecedortemp = new ArrayList<ProdutosFornecedor>();
-        for(ProdutosFornecedor produtoFornecedor: produtos_fornecedor){
+    public ArrayList<Produto> getProdutos_fornecedor (int id_fornecedor){
+        ArrayList<Produto> produtosFornecedortemp;
+        produtosFornecedortemp = new ArrayList<Produto>();
+        for(Produto produtoFornecedor: produtos_fornecedor){
             if(produtoFornecedor.getFornecedor_id() == id_fornecedor){
-                produtosFornecedortemp.add(new ProdutosFornecedor(produtoFornecedor.getId(),produtoFornecedor.getNome(),produtoFornecedor.getReferência(),produtoFornecedor.getDescrição(),produtoFornecedor.getPreço(),produtoFornecedor.getFornecedor_id()));
+                produtosFornecedortemp.add(new Produto(produtoFornecedor.getId(),produtoFornecedor.getNome(),produtoFornecedor.getReferência(),produtoFornecedor.getDescrição(),produtoFornecedor.getPreço(),produtoFornecedor.getFornecedor_id()));
             }
         }
         return produtosFornecedortemp;
@@ -170,5 +234,5 @@ public class SingletonGerirOrcamentos {
             }
         }
         return fornecedorestemp;
-    }
+    }*/
 }
