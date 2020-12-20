@@ -7,8 +7,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 
 import amsi.dei.estg.ipleiria.RightPrice.FullScreen;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto.Produto;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class DetalhesProdutoFornecedor extends FullScreen {

@@ -1,4 +1,4 @@
-package amsi.dei.estg.ipleiria.RightPrice.Modelo;
+package amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto;
 
 public class Produto {
    private int id;
@@ -6,19 +6,19 @@ public class Produto {
    private String imagem;
    private String nome;
    private String referencia;
-   private String descrição;
+   private String descricao;
    private int preco;
 
    //Construtor
 
 
-    public Produto(int id, int id_fornecedor, String imagem, String nome, String referencia, String descrição, int preco) {
+    public Produto(int id, int id_fornecedor, String imagem, String nome, String referencia, String descricao, int preco) {
         this.id = id;
         this.id_fornecedor = id_fornecedor;
         this.imagem = imagem;
         this.nome = nome;
         this.referencia = referencia;
-        this.descrição = descrição;
+        this.descricao = descricao;
         this.preco = preco;
     }
 
@@ -45,8 +45,8 @@ public class Produto {
         return referencia;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescricao() {
+        return descricao;
     }
 
     public int getPreco() {
@@ -54,6 +54,11 @@ public class Produto {
     }
 
     //Funções SET
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setImagem(String imagem) {
         this.imagem = imagem;
@@ -67,8 +72,8 @@ public class Produto {
         this.referencia = referencia;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public void setPreco(int preco) {
