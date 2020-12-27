@@ -2,24 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="amsi.dei.estg.ipleiria.RightPrice">
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logotipo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.RightPrice">
-
-<activity android:name=".FragmentosAtividades.DetalhesUtilizador" android:parentActivityName=".FragmentosAtividades.DetalhesUtilizador" />
-<activity android:name=".Fornecedor.Atividades.DetalhesProdutoFornecedor" />
-<activity android:name=".Instalador.Atividades.AdicionarCliente"/>
+        <activity
+            android:name=".FragmentosAtividades.DetalhesUtilizador"
+            android:parentActivityName=".FragmentosAtividades.DetalhesUtilizador" />
+        <activity android:name=".Fornecedor.Atividades.DetalhesProdutoFornecedor" />
+        <activity android:name=".Instalador.Atividades.AdicionarCliente" />
         <activity
             android:name=".MenuMainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name="amsi.dei.estg.ipleiria.RightPrice.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,5 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
 </manifest>

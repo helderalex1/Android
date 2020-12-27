@@ -2,7 +2,9 @@ package amsi.dei.estg.ipleiria.RightPrice;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
@@ -13,25 +15,31 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
+import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
+
+import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Admin.MqttHelper;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.Listas.ListaAceitarUtilizadoresAdmin;
-import amsi.dei.estg.ipleiria.RightPrice.Admin.MainFragmentAdmin;
 import amsi.dei.estg.ipleiria.RightPrice.Admin.Listas.ListaUtilizadoresAdmin;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.MainFragmentFornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Listas.ListaProdutoFornecedor;
+import amsi.dei.estg.ipleiria.RightPrice.Admin.MainFragmentAdmin;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Listas.ListaClientesDoFornecedor;
+import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Listas.ListaProdutoFornecedor;
+import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.MainFragmentFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.FragmentosAtividades.PerfilUtilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Listas.ListaClientesInstalador;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Listas.ListaConhecerFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.MainFragmentInstalador;
 
 
-public class MenuMainActivity extends FullScreen implements NavigationView.OnNavigationItemSelectedListener{
+public class MenuMainActivity extends FullScreen implements NavigationView.OnNavigationItemSelectedListener {
 
     private NavigationView navigationView;
     private DrawerLayout drawer;
     private FragmentManager fragmentManager;
     public static final String numConta ="";
     private int numeconta=0;
+    private MqttHelper mqttHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +60,9 @@ public class MenuMainActivity extends FullScreen implements NavigationView.OnNav
             case 3:
                 setContentView(R.layout.activity_menu_administrador);
                 drawer= findViewById(R.id.drawer_layout_administrador);
+
+                startMqtt();
+
                 break;
         }
 
@@ -131,4 +142,32 @@ public class MenuMainActivity extends FullScreen implements NavigationView.OnNav
             drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    private void startMqtt(){
+        mqttHelper = new MqttHelper(getApplicationContext());
+        mqttHelper.setCallback(new MqttCallbackExtended() {
+            @Override
+            public void connectComplete(boolean b, String s) {
+            }
+
+            @Override
+            public void connectionLost(Throwable throwable) {
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
+                Log.w("Debug", mqttMessage.toString());
+                Toast.makeText(MenuMainActivity.this, mqttMessage.toString(), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
+
+            }
+        });
+    }
+
+
 }
