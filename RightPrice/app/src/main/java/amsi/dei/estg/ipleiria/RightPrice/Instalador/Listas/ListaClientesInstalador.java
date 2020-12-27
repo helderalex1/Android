@@ -26,8 +26,7 @@ import java.util.ArrayList;
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Instalador.ListaClientesInstaladorAdapter;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Atividades.DetalhesProdutoFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades.AdicionarCliente;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Cliente;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Cliente.Cliente;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 import static amsi.dei.estg.ipleiria.RightPrice.Instalador.Atividades.AdicionarCliente.DETALHES_CLIENTE_INSTALADOR;

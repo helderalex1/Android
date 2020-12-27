@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto.Produto;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 public class ListaProdutosFornecedor extends BaseAdapter {

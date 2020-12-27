@@ -4,6 +4,9 @@ import android.content.Context;
 
 import java.util.ArrayList;
 
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Cliente.Cliente;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.FornecedorInstalador.FornecedorInstalador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto.Produto;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.UtilizadorBDHelper;
 

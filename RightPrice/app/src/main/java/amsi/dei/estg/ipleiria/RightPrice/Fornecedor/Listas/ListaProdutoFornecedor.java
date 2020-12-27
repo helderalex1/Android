@@ -25,8 +25,7 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.RightPrice.Adaptadores.Fornecedor.ListaProdutosFornecedor;
 import amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Atividades.DetalhesProdutoFornecedor;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto;
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Produto.Produto;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 import static amsi.dei.estg.ipleiria.RightPrice.Fornecedor.Atividades.DetalhesProdutoFornecedor.DETALHES_PRODUTO;
