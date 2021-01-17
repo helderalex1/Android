@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/img_cliente_acetiar_cliente"
+            android:id="@+id/ImgAdminAcetiarUtilizador"
             android:layout_width="100dp"
             android:layout_height="136dp"
             app:srcCompat="@drawable/ic_user" />

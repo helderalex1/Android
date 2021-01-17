@@ -6,8 +6,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Instalador.Listas.ListaConhecerFornecedor">
 
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swiperefrechConhecerFornecedor">
+
     <ListView
-        android:id="@+id/lvListaClienteconhecerFornecedor"
+        android:id="@+id/lvListaconhecerFornecedor"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </FrameLayout>

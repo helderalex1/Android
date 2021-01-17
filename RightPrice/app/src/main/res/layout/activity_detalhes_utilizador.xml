@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-tools:context=".FragmentosAtividades.DetalhesUtilizador">
+tools:context=".Admin.DetalhesUtilizador">
 
 
     <androidx.core.widget.NestedScrollView
@@ -23,7 +23,7 @@ tools:context=".FragmentosAtividades.DetalhesUtilizador">
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/det_ima_utilizador_pendente"
+                android:id="@+id/IMGDetalhesUtilizador"
                 android:layout_width="match_parent"
                 android:layout_height="220dp" />
 
@@ -92,6 +92,15 @@ tools:context=".FragmentosAtividades.DetalhesUtilizador">
                 android:ems="10"
                 android:enabled="false"
                 android:hint="@string/categoria_com_dois_pontos"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/Funcao_utilizadore_pendente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/funcao_com_dois_pontos"
                 android:inputType="textPersonName" />
         </LinearLayout>
 

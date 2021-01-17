@@ -5,30 +5,39 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 
-import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador.Utilizador;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Categoria;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.SingletonGerirOrcamentos;
+import amsi.dei.estg.ipleiria.RightPrice.Modelo.Utilizador;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
+//Adaptador para carregar a lista de Utilizadores pendentes.
+//Adaptador utilizado pelo ADMIN
 public class UtilizadoresAceitarAdapter extends BaseAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private ArrayList<Utilizador> utilizadors;
-    public UtilizadoresAceitarAdapter(Context context, ArrayList<Utilizador> utilizadors){
+    private ArrayList<Utilizador> utilizadoresAceitar;
+
+    public UtilizadoresAceitarAdapter(Context context, ArrayList<Utilizador> utilizadoresAceitar){
         this.context = context;
-        this.utilizadors = utilizadors;
+        this.utilizadoresAceitar = utilizadoresAceitar;
     }
     @Override
     public int getCount() {
-        return utilizadors.size();
+        return utilizadoresAceitar.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return utilizadors.get(position);
+        return utilizadoresAceitar.get(position);
     }
 
     @Override
@@ -49,23 +58,37 @@ public class UtilizadoresAceitarAdapter extends BaseAdapter {
             viewHolderLista = new ViewHolderLista(convertView);
             convertView.setTag(viewHolderLista);
         }
-        viewHolderLista.update(utilizadors.get(position));
+        viewHolderLista.update(utilizadoresAceitar.get(position));
         return convertView;
     }
 
     private class ViewHolderLista{
+
         private final TextView nome, empresa, email,categoria;
+        private final ImageView imagemUtilizador;
+
         public ViewHolderLista(View convertView){
             nome = convertView.findViewById(R.id.tVNomeAceitarUtilizador);
             empresa = convertView.findViewById(R.id.tvEmpresaAceitarUtilizador);
             email = convertView.findViewById(R.id.tvEmailAceitarUtilizador);
             categoria = convertView.findViewById(R.id.tvCategoriaAceitarUtilizador);
+            imagemUtilizador= convertView.findViewById(R.id.ImgAdminAcetiarUtilizador);
         }
         public void update(Utilizador utilizadores){
             nome.setText(utilizadores.getUsername());
             empresa.setText(utilizadores.getNome_empresa());
             email.setText(utilizadores.getEmail());
-            categoria.setText(""+utilizadores.getCategoria_id());
+            Categoria catergoriaDados = SingletonGerirOrcamentos.getInstance(context).getCategoria(utilizadores.getCategoria_id());
+            if(catergoriaDados!=null){
+                categoria.setText(catergoriaDados.getNome_categoria());
+            }else{
+                categoria.setText(R.string.Erro_Carregar_categoria);
+            }
+            Glide.with(context)
+                    .load(SingletonGerirOrcamentos.mURLAPIOrcamentos+"/"+utilizadores.getImagem())
+                    .placeholder(R.drawable.ic_user)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(imagemUtilizador);
         }
     }
 }

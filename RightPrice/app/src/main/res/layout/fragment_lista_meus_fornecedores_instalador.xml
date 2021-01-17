@@ -5,19 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".Instalador.Listas.ListaMeusFornecedores">
 
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swiperefrechFornecedoresdoInstalador">
+
     <ListView
-        android:id="@+id/lVorcamento_obra"
+        android:id="@+id/lVListaForneceddoresInstalador"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabaddorcamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="10dp"
-        android:backgroundTint="#E91E63"
-        android:clickable="true"
-        android:src="@drawable/ic_floating_adicionar"
-        android:contentDescription="TODO" />
+
 </FrameLayout>

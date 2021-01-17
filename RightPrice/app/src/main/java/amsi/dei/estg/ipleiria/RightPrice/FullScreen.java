@@ -1,26 +1,14 @@
 package amsi.dei.estg.ipleiria.RightPrice;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import android.view.accessibility.AccessibilityManager;
-import android.widget.Toast;
 
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+
+//funcao que coloca as atividades em FullScreen
 public abstract class FullScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
