@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fornecedor.DetalhesClienteFornecedor">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/IMGDetalhesInstaladorFOrnecedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp" />
+
+                <EditText
+                    android:id="@+id/NomeDetalhesInstaladorFOrnecedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="@string/nome_com_dois_pontos"
+                    android:inputType="textPersonName"
+                    />
+
+                <EditText
+                    android:id="@+id/nome_empresaDetalhesInstaladorFOrnecedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="@string/nome_da_empresa"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/emailDetalhesInstaladorFOrnecedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="@string/email"
+                    android:inputType="textPersonName" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/telefoneDetalhesInstaladorFOrnecedor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:hint="@string/telemovel_com_dois_pontos"
+                        android:inputType="textPersonName" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/Btn_ligar_numero_Fornecedor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/main_color"
+                            android:gravity="right"
+                            android:text="@string/ligar_com_dois_pontos"></Button>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/categoriaDetalhesInstaladorFOrnecedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="@string/categoria_com_dois_pontos"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

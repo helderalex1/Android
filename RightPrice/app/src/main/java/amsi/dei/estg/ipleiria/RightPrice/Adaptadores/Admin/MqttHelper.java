@@ -13,12 +13,13 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+// Serviço de MQTT para comunicar com o mosquito
 public class MqttHelper {
     public MqttAndroidClient mqttAndroidClient;
 
     final String serverUri = "tcp://jpla-rpla.asuscomm.com:1883";
 
-    final String clientId = "ExampleAndroidClient";
+    final String clientId = "Admin";
     final String subscriptionTopic = "NovoCliente";
 
     final String username = null ;
@@ -82,7 +83,6 @@ public class MqttHelper {
                 }
             });
 
-
         } catch (MqttException ex){
             ex.printStackTrace();
         }
@@ -108,4 +108,5 @@ public class MqttHelper {
             ex.printStackTrace();
         }
     }
+    
 }

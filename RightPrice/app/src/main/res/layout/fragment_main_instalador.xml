@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Instalador.MainActivity_instalador">
+    tools:context=".Instalador.MainFragmentInstalador">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,15 +12,143 @@
 
 
         <TextView
-            android:id="@+id/textView9"
-            android:layout_width="297dp"
-            android:layout_height="45dp"
+            android:id="@+id/textView_Titulo_Minha_estatistica_Instalador"
+            android:layout_width="324dp"
+            android:layout_height="47dp"
             android:gravity="center"
-            android:text="As minhas Estatistica"
+            android:text="@string/as_minhas_estatistica"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.112" />
+
+
+        <TextView
+            android:id="@+id/textViewTotal_dos_Clientes"
+            android:layout_width="180dp"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:text="@string/n_mero_de_clientes_que_tem"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.337"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.284" />
+
+        <TextView
+            android:id="@+id/textViewTotalClientes"
+            android:layout_width="60dp"
+            android:layout_height="26dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.735"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.285" />
+
+        <TextView
+            android:id="@+id/textViewTotal_Seus_fornecedores"
+            android:layout_width="198dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="@string/quantidade_dos_seus_fornecedores"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.281"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.339" />
+
+        <TextView
+            android:id="@+id/textViewTotalSeusFornecedores"
+            android:layout_width="61dp"
+            android:layout_height="29dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.737"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.334" />
+
+        <TextView
+            android:id="@+id/textViewTotal_orcamentos"
+            android:layout_width="121dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text="@string/total_orcamentos"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.401" />
+
+        <TextView
+            android:id="@+id/textViewTotalOrcamentos"
+            android:layout_width="61dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.737"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.401" />
+
+        <TextView
+            android:id="@+id/textViewTitulo_fornecedor"
+            android:layout_width="166dp"
+            android:layout_height="51dp"
+            android:gravity="center"
+            android:text="@string/rightprice"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.289"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.629" />
+
+        <TextView
+            android:id="@+id/textViewTitulo2_fornecedor"
+            android:layout_width="298dp"
+            android:layout_height="41dp"
+            android:gravity="center"
+            android:text="@string/work_less_do_more_and_dont_stop"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.768" />
+
+        <TextView
+            android:id="@+id/textViewTitulo1_fornecedor"
+            android:layout_width="166dp"
+            android:layout_height="51dp"
+            android:gravity="center"
+            android:text="@string/mission"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.692" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

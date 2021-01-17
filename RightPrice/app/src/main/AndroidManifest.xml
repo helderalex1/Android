@@ -7,32 +7,67 @@
         android:icon="@mipmap/logotipo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RightPrice">
-        <activity
-            android:name=".FragmentosAtividades.DetalhesUtilizador"
-            android:parentActivityName=".FragmentosAtividades.DetalhesUtilizador" />
-        <activity android:name=".Fornecedor.Atividades.DetalhesProdutoFornecedor" />
-        <activity android:name=".Instalador.Atividades.AdicionarCliente" />
-        <activity
-            android:name=".MenuMainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/Theme.RightPrice"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".Instalador.DetalhesConhecerFornecedor"
+                  android:parentActivityName=".Instalador.DetalhesConhecerFornecedor"/>
+
+        <activity android:name=".Instalador.DetalhesFornecedor"
+                  android:parentActivityName=".Instalador.DetalhesFornecedor" />
+
+        <activity android:name=".Instalador.DetalhesCliente"
+                  android:parentActivityName=".Instalador.DetalhesCliente"/>
+
+        <activity android:name=".Instalador.DetalhesOrcamento"
+                  android:parentActivityName=".Instalador.DetalhesOrcamento"/>
+
+        <activity android:name=".Instalador.DetalhesProdutoOrcamento"
+                  android:parentActivityName=".Instalador.DetalhesProdutoOrcamento"/>
+
+        <activity android:name=".Fornecedor.DetalhesClienteFornecedor"
+                  android:parentActivityName=".Fornecedor.DetalhesClienteFornecedor" />
+
+        <activity android:name=".Fornecedor.DetalhesProdutoFornecedor"
+                  android:parentActivityName=".Fornecedor.DetalhesProdutoFornecedor" />
+
+        <activity android:name=".Admin.DetalhesUtilizador"
+                  android:parentActivityName=".Admin.DetalhesUtilizador" />
+
+        <activity android:name=".MenuMainActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".MainActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+
+        <receiver android:name=".Utils.BootCompletedIntentReceiver"
+                  android:label="BootCompletedIntentReceiver"
+                  android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="org.eclipse.paho.android.service.MqttService" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".Utils.ServiceRunBackground"
+                 android:exported="false"
+                 android:label="ServiceRunBackground" />
+
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
-    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>

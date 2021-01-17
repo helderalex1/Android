@@ -6,10 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Instalador.Listas.ListaClientesInstalador">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swiperefrechCleintesInstalador">
+
     <ListView
         android:id="@+id/lvListaClientesinstalador"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabaddClienteInstalador"

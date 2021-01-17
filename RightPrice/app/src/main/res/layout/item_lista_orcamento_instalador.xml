@@ -9,7 +9,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imgVi_clientes_instalador"
+            android:id="@+id/IMGOrcamento"
             android:layout_width="100dp"
             android:layout_height="136dp"
             app:srcCompat="@mipmap/ic_orcamento" />
@@ -25,17 +25,17 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvNomeObrad"
+                    android:id="@+id/tvNome_Orcamento_Instalador"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Nome Obra:" />
+                    android:text="Nome Orcamento:" />
 
                 <TextView
-                    android:id="@+id/tVNome_Produto"
+                    android:id="@+id/tVNomeOrcamentoInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                     />
 
             </LinearLayout>
 
@@ -47,17 +47,17 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVData_orcamentod"
+                    android:id="@+id/tVData_Orcamento_Instalador"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Data:" />
 
                 <TextView
-                    android:id="@+id/tVDescrição"
+                    android:id="@+id/tVDataOrcamentoInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                     />
 
             </LinearLayout>
 
@@ -67,18 +67,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVorcamento_margemd"
+                    android:id="@+id/tV_Margem_orcamento_Instalador"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:text="Margem:" />
 
                 <TextView
-                    android:id="@+id/tVPreço"
+                    android:id="@+id/tVMargemOrcamentoInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="TextView" />
+                    />
 
             </LinearLayout>
 
@@ -88,18 +88,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVorcamento_totald"
+                    android:id="@+id/tV_total_Orcamento_Instaldor"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:text="Total:" />
 
                 <TextView
-                    android:id="@+id/tvorcamento_total"
+                    android:id="@+id/tvTotalOrcamentoInstalador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="TextView" />
+                     />
 
             </LinearLayout>
         </LinearLayout>

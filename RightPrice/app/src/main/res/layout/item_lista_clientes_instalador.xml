@@ -9,10 +9,9 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imgVi_clientes_instalador"
+            android:id="@+id/IMGClienteInstalador"
             android:layout_width="83dp"
             android:layout_height="match_parent"
-            android:contentDescription="@string/imagem_cliente_instalador"
             app:srcCompat="@drawable/ic_user" />
 
         <LinearLayout

@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+//Adaptador para carregar as paginas de login e registar para o POPUP (Fragmento)
+
 public class LoginRegistarAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> fragments = new ArrayList<>();

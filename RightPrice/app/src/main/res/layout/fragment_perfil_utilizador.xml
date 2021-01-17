@@ -10,22 +10,23 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
 android:layout_width="match_parent"
-android:layout_height="match_parent">
+android:layout_height="match_parent"
+    android:id="@+id/constraint_detalhes">
 
-<Button
-    android:id="@+id/button3"
-    android:layout_width="121dp"
-    android:layout_height="38dp"
-    android:text="Escolher"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintHorizontal_bias="0.975"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.499" />
+    <Button
+        android:id="@+id/buttonEscolherImagem"
+        android:layout_width="121dp"
+        android:layout_height="38dp"
+        android:text="Escolher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561" />
 
-<Button
-    android:id="@+id/button2"
+    <Button
+    android:id="@+id/buttonGuardarDadosUtilizador"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:backgroundTint="@color/main_color"
@@ -38,7 +39,7 @@ android:layout_height="match_parent">
     app:layout_constraintVertical_bias="0.92" />
 
 <EditText
-    android:id="@+id/editTextTextPersonName"
+    android:id="@+id/editTextNomeEditar"
     android:layout_width="210dp"
     android:layout_height="45dp"
     android:layout_marginTop="60dp"
@@ -53,7 +54,7 @@ android:layout_height="match_parent">
     app:layout_constraintVertical_bias="0.151" />
 
 <EditText
-    android:id="@+id/editTextTextPersonName2"
+    android:id="@+id/editTextEmailEditar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:ems="10"
@@ -67,7 +68,7 @@ android:layout_height="match_parent">
     app:layout_constraintVertical_bias="0.313" />
 
 <EditText
-    android:id="@+id/editTextTextPersonName3"
+    android:id="@+id/editTextTextNomeEmpresaEditar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:ems="10"
@@ -79,8 +80,23 @@ android:layout_height="match_parent">
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.396" />
 
+
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/editTextTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:digits="0123456789"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <EditText
+        android:id="@+id/editTextemailGeral"
         android:layout_width="296dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -95,27 +111,41 @@ android:layout_height="match_parent">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.818" />
 
-<TextView
-    android:id="@+id/textView5"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="right"
-    android:text="Nome da Empresa:"
-    android:textSize="16sp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintHorizontal_bias="0.069"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.394" />
+    <TextView
+        android:id="@+id/textView_Nome_da_Empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/nome_da_empresa"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.394" />
 
-<TextView
+    <TextView
+        android:id="@+id/textView_Telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/telefone"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <TextView
     android:id="@+id/tVPerfil"
     android:layout_width="65dp"
     android:layout_height="36dp"
     android:layout_marginTop="56dp"
     android:gravity="center"
-    android:text="Perfil"
+    android:text="@string/perfil"
     android:textSize="20sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
@@ -124,13 +154,13 @@ android:layout_height="match_parent">
     app:layout_constraintVertical_bias="0.0" />
 
 <TextView
-    android:id="@+id/textView3"
+    android:id="@+id/textViewNome"
     android:layout_width="58dp"
     android:layout_height="19dp"
     android:layout_marginTop="168dp"
     android:layout_marginBottom="39dp"
     android:gravity="right"
-    android:text="Nome:"
+    android:text="@string/nome_com_dois_pontos"
     android:textSize="16sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintHorizontal_bias="0.274"
@@ -140,7 +170,7 @@ android:layout_height="match_parent">
     app:layout_constraintVertical_bias="0.0" />
 
 <TextView
-    android:id="@+id/textView4"
+    android:id="@+id/textViewEmail"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="right"
@@ -153,25 +183,25 @@ android:layout_height="match_parent">
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.322" />
 
-<TextView
-    android:id="@+id/textView6"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="right"
-    android:text="Imagem de Perfil:"
-    android:textSize="16sp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintHorizontal_bias="0.055"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.499" />
+    <TextView
+        android:id="@+id/textViewImagem_Perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/imagem_de_perfil"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
 
-<TextView
-    android:id="@+id/textView7"
+    <TextView
+    android:id="@+id/textViewAdministracao"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Administração:"
+    android:text="@string/administra_o"
     android:textSize="16sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
@@ -179,22 +209,12 @@ android:layout_height="match_parent">
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.648" />
 
-<TextView
-    android:id="@+id/textView8"
-    android:layout_width="143dp"
-    android:layout_height="23dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintHorizontal_bias="0.522"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-<TextView
-    android:id="@+id/textView9"
+    <TextView
+    android:id="@+id/textViewDescricao"
     android:layout_width="297dp"
     android:layout_height="45dp"
     android:gravity="center"
-    android:text="Para qualquer dúvida ou problema contacte a administração"
+    android:text="@string/para_qualquer_d_vida_ou_problema_contacte_a_administra_o"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintHorizontal_bias="0.528"
     app:layout_constraintLeft_toLeftOf="parent"

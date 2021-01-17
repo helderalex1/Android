@@ -21,6 +21,7 @@ import amsi.dei.estg.ipleiria.RightPrice.FullScreen;
 import amsi.dei.estg.ipleiria.RightPrice.R;
 
 
+//class do popUp Login/Registar
 public class TabLoginRegistar extends DialogFragment  {
     private FullScreen fullScreen;
     private LoginRegistarAdapter viewPagerAdapter;
@@ -40,7 +41,7 @@ public class TabLoginRegistar extends DialogFragment  {
         tabLayout = view.findViewById(R.id.tabLayout);
         viewPager = view.findViewById(R.id.viewpageraa);
 
-
+        //Utiliza o viewpager para carregar os dois formolários
 
 
         registar = new Registar();
